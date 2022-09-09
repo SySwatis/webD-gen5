@@ -1,0 +1,289 @@
+/* Custom Design */
+
+.navbar-header {
+  > a:first-child {
+    position:fixed;
+    z-index: 10;
+  }
+}
+
+a {
+  color: @brown;
+}
+
+.hidden {
+  display: none;
+}
+
+// Button rounded
+
+button {
+ border: 0 !important;
+  &.btn {
+    border-radius: 1.125rem;
+  }
+  &.btn-lg {
+    border-radius: 1.5rem;
+  }
+}
+
+// Input rounded
+
+input.form-control {
+  border-radius: 19px;
+  height : calc(1.5em + .75rem + 6px);
+}
+
+// Ibox rounded
+
+.ibox-content {
+  border-radius: 18px;
+  .fa {
+    position: relative;
+  }
+}
+
+.ibox-background-orange {
+  
+  .ibox-content {border: none;
+    background-color: @orange;
+    .fa, p, h1, h2, h3, h4, h5, span, ul, li {
+      color: #fff;
+    }
+  }
+  
+}
+
+// Label notifications
+
+.label-circle {
+	border-radius: 15px;
+	padding: 5px;
+	display: inline-block;
+  line-height: 20px;
+	width: 30px;
+	height: 30px;
+	text-align: center;
+	font-size: 13px;
+	position: absolute;
+	right: 0;
+	top: 0;
+  color: #fff;
+  margin-right: 9px;
+  background-color: @blue;
+}
+
+.navbar-top-links {
+  .label-circle {
+    margin-right: -12px;
+  }
+}
+
+// Title and bolder
+
+h1 > span,
+.ibox h2 > span {
+  font-weight: 900;
+  font-size: 1.2em;
+}
+.ibox h3 {
+  font-weight: 400;
+}
+.ibox h3 > span {
+  font-weight: 900;
+  font-size: 1.4em;
+}
+
+/* Background */
+
+.bg-nav {
+  background-color: @nav-bg;
+}
+
+.bg-nav-fade-60 {
+  background-color: fade(@nav-bg, 60%);
+}
+
+.bg-nav-fade-90 {
+  background-color: fade(@nav-bg, 90%);
+}
+
+.bg-white-fade-60 {
+  background-color: rgba(255, 255, 255, 0.6) !important;
+}
+
+.bg-white-fade-90 {
+  background-color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.bg-blue {
+  background-color: @blue;
+}
+
+.border-bottom-orange .ibox-content {
+  border-bottom: 4px solid @orange;
+}
+
+.border-left-orange .ibox-content {
+  border-left: 4px solid @orange;
+}
+
+.border-right-orange .ibox-content {
+  border-right: 4px solid @orange;
+}
+
+.border-top-orange .ibox-content {
+  border-top: 6px solid @orange;
+  border-left: none;
+  border-right: none;
+  border-bottom: none;
+}
+
+.border-bottom-orange .ibox-content {
+  border-bottom: 6px solid @orange;
+  border-left: none;
+  border-right: none;
+  border-bottom: none;
+}
+
+.border-top-white .ibox-content {
+  border-top: 6px solid #FFF;
+  border-left: none;
+  border-right: none;
+  border-bottom: none;
+}
+
+.border-bottom-white .ibox-content {
+  border-bottom: 6px solid #FFF;
+  border-left: none;
+  border-right: none;
+  border-bottom: none;
+}
+
+// header
+
+.nav-header {
+  background-image: none;
+  text-align: center;
+}
+
+// navbar-top-links
+
+.navbar-top-links {
+  &.nav > li > {
+    text-align: center;
+    &.active {
+      background-color: transparent !important;
+    }
+    a,a:focus {
+      border-radius: 35px;
+      width: 70px;
+      background-color: #FFF !important;
+      margin: 6px;
+      color: @brown;
+      i {
+        margin: 0;
+      }
+      &:hover {
+        background-color: @orange  !important;;
+        color: #FFF;
+      }
+  }
+  }
+  }
+
+/* Footer */
+
+.footer {
+  position: relative !important;
+}
+
+.text-copyright {
+  color: @nav-bg;
+  img {
+    display: inline-block;
+    margin: 0px 2px 0 2px;
+  }
+}
+
+// Body class
+
+.mini-navbar {
+  .sidebar-collapse .logo {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+
+  // Ibox
+
+  .ibox-content-transparent-lg {
+    border: none;
+    background-color: transparent;
+    padding: 0;
+  }
+
+  // Login
+  
+  body.nav-hidden {
+    .navbar-static-top, .navbar-static-side {
+      display: none;
+    }
+  }
+
+  // Reduce size
+
+  .navbar-sticky {
+    
+    div.row:not(.login):first-of-type   {
+      .ibox, h1, h2, h3, .fa, div, span, p {
+        -webkit-transition: all 0.5s;
+        -moz-transition: all 0.5s;
+        -o-transition: all 0.5s;
+        transition: all 0.5s;
+      }
+      .ibox.border-top-orange {
+        position: relative;
+        top:12px;
+        h3, button, p {
+          height: 0 !important;
+          overflow: hidden !important;
+          padding: 0 !important;
+          margin:0 !important;
+        }
+        h1 {
+          font-size: 18px;
+          // left: -20px;
+          // position: relative;
+          margin: 0;
+        }
+        margin-bottom: 0;
+        .m-t-lg, .m-b-lg {
+          margin: 0;
+          height: 0;
+          overflow: hidden;
+        }
+        .fa {
+          float: left;
+          font-size: 24px;
+          padding: 0 !important;
+          margin: 0 !important;
+        }
+      }
+
+      .ibox:not(.border-top-orange) {
+        height: 0;
+        overflow: hidden;
+      }
+
+    }
+  
+}
+
+}
+@media only screen and (max-width: 767px) {
+
+
+
+}

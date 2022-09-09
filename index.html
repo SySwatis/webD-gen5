@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Generation 5.0 | Bienvenue</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <script src="js/plugins/pdfjs/pdf.js"></script>
+
+</head>
+
+<body class="fixed-sidebar">
+
+    <div id="wrapper">
+        <!-- https://cssduotone.com/ -->
+        <!-- HTML Markup -->
+
+        <!-- You should think of `img-wrapper` as the image itself. This element is what you should target for sizing/styling. -->
+        <div class="img-wrapper">
+            <!-- The `::before` pseudo-element will apear here in the Broweser(DOM) and in web-inspector. -->
+            <img  class="parcours-background bien-commencer-background atelier-1-background hidden" src="css/patterns/backgroud-style-brown-fablab-g-5.jpg" alt="Bienvenue">
+            <img  class="login-background acceler-emploi-background mon-espace-background" src="css/patterns/backgroud-style-white-fablab-g-5.jpg" alt="Atellier 1 - Gagnez en confiance">
+        </div>
+
+        <nav class="navbar-default navbar-static-side bg-nav" role="navigation">
+            <div class="sidebar-collapse">
+                <div class="logo m-b-lg m-t-lg text-center">
+                    <!-- <img src="img/logo-g5-white-300.png" width="100%"> -->
+                    <img src="img/logo-fablab-generation-5.png" alt="FabLab Generation 5">
+                </div>
+                <ul class="nav metismenu" id="side-menu">
+                    <li>
+
+                        <!-- <div class="dropdown profile-element">
+
+                            <span id="photoProfil">
+                                <img data-toggle="modal" data-target="#myModal" alt="Cliquez et ajoutez une photo"
+                                    class="rounded-circle" style="height:72px" src="img/profile_small-123x.jpg"
+                                    onclick="xajax_afficheModifPhoto();">
+                            </span>
+                            <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                                <span class="block m-t-xs font-bold">J. Mari</span>
+                                <span class="text-muted text-xs block">Mon compte <b class="caret"></b></span>
+                            </a>
+                            <ul class="dropdown-menu animated fadeInRight m-t-xs">
+                                <li><a class="dropdown-item" href="infos.html">Mes infos</a></li>
+                                <li><a class="dropdown-item" href="login.html">Se deconnecter</a></li>
+                            </ul>
+
+                        </div> -->
+
+                        <div class="logo-element">
+                            <img src="img/logo-g5-white-simple-99x.png" height="48px"
+                            width="48px" alt="Generation 5">
+                        </div>
+
+                    </li>
+
+                    <li class="active">
+                        <a href="#AcceleR-emploi" data-content="acceler-emploi"><i class="fa fa-bullseye"></i> <span
+                                class="nav-label">AccélèR'emploi</span></a>
+                    </li>
+                    
+                    <li>
+                        <a href="#Mon-espace" data-content="mon-espace"><i class="fa fa-home"></i> <span
+                                class="nav-label">Mon espace</span></a>
+                    </li>
+                    <li>
+                        <a href="#Mon-parcours" data-content="parcours"><i class="fa fa-line-chart"></i> <span class="nav-label">Mon
+                                Parcours</span> </a>
+                    </li>
+                    <li>
+                        <a href="_#"><i class="fa fa-pencil"></i> <span class="nav-label">Evaluation</span> </a>
+                    </li>
+                    <li>
+                        <a href="_#"><i class="fa fa-folder-open-o"></i> <span class="nav-label">Documents</span><span class="label-circle animated shake">2</span></a>
+                    </li>
+                    <li>
+                        <a href="_#"><i class="fa fa-retweet"></i> <span class="nav-label">
+                                Recommencer</span> </a>
+                    </li>
+                    <li>
+                        <a href="_#"><i class="fa fa-calendar"></i> <span class="nav-label">
+                                Agenda</span><span class="label-circle animated shake">1</span></a>
+                    </li>
+                    <li>
+                        <a href="_#"><i class="fa fa-newspaper-o"></i> <span class="nav-label">
+                                Actualités</span> </a>
+                    </li>
+                    <li>
+                        <a href="_#"><i class="fa fa-address-book"></i> <span class="nav-label">
+                                Entreprises</span> </a>
+                    </li>
+                    <li>
+                        <a href="_#"><i class="fa fa-star"></i> <span class="nav-label">
+                                Avis</span> </a>
+                    </li>
+                    <li>
+                        <a href="_#"><i class="fa fa-comments"></i> <span class="nav-label">
+                                Communauté</span> </a>
+                    </li>
+                    <li>
+                        <a href="_#"><i class="fa fa-rocket"></i> <span class="nav-label">
+                                Soft Skills</span> </a>
+                    </li>
+                </ul>
+                
+            </div>
+        </nav>
+
+        <div id="page-wrapper">
+
+            <div class="row">
+                <nav class="navbar navbar-static-top" role="navigation"
+                    style="margin-bottom: 0; background-color: transparent;">
+                    <div class="navbar-header">
+                        <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i
+                                class="fa fa-bars"></i> </a>
+                        <!-- <form role="search" class="navbar-form-custom" method="post" action="#">
+                            <div class="form-group">
+                                <input type="text" placeholder="Rechercher ..." class="form-control" name="top-search"
+                                    id="top-search">
+                            </div>
+                        </form> -->
+                    </div>
+                    <ul class="nav navbar-top-links navbar-right">
+                        <li>
+                            <a href="#" title="Mon compte">
+                                <i class="fa fa-user fa-2x"></i>
+                            </a>
+                        </li>
+                        <li style="position: relative">
+                            <a href="#" data-content="mon-espace" title="Notifications">
+                                <i class="fa fa-bell fa-2x"></i>
+                                <span class="label-circle animated shake">6</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" data-content="login" title="Se deconnecter">
+                                <i class="fa fa-sign-out fa-2x"></i>
+                            </a>
+                        </li>
+                    </ul>
+
+                </nav>
+            </div>
+
+
+            <div class="wrapper wrapper-content animated fadeInRight">
+                <section id="features" class="container">
+                    <!-- ajaxContent -->
+                </section>
+                
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="footer">
+        <div class="text-copyright text-right">
+            <small><a href="_#" class="">Mentions légales</a> | <span><img src="img/logo-g5x25.png" width="25px"
+                        height="25px" alt="Generation 5.0">
+                </span><span></span>Copyright &copy; 2020-2022</small>
+        </div>
+    </div>
+
+    <!-- Mainly scripts -->
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+    <!-- Custom and plugin javascript -->
+    <script src="js/inspinia.js"></script>
+    <script src="js/plugins/pace/pace.min.js"></script>
+
+    <!-- Custom Ingeneria 5.0 - Syswatis -->
+    <script src="js/main.js"></script>
+
+    
+
+
+</body>
+
+</html>
