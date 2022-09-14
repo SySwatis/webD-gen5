@@ -45,6 +45,16 @@ var xajax_affiche_modules = null;
 
 				$('#features').html(response);
 
+                // 
+                if($('.progress-ing5').length)
+                $('.progress-ing5').circleProgress({
+                    max: 100,
+                    value: 75,
+                    textFormat: 'value',
+                    startAngle: -90,
+                    animationDuration: 1500
+                });
+
                 $('.img-wrapper').removeClass('duotone');
                 $('.img-wrapper img').addClass('hidden');
                 $('.'+page+'-background').removeClass('hidden');
