@@ -133,7 +133,7 @@ var xajax_affiche_modules = null;
     navAjax();
 
 	// Default content
-    ajaxRequestHtml('login');
+    ajaxRequestHtml('mon-espace');
 
     // $('.nav-header').on('click',function(){
     //     $('.img-wrapper').toggleClass('duotone');
