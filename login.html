@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>INSPINIA | Login</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
+
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+</head>
+
+<body class="gray-bg">
+
+    <!-- https://cssduotone.com/ -->
+    <!-- HTML Markup -->
+
+    <!-- You should think of `img-wrapper` as the image itself. This element is what you should target for sizing/styling. -->
+    <div class="img-wrapper">
+        <!-- The `::before` pseudo-element will apear here in the Broweser(DOM) and in web-inspector. -->
+        <img class="parcours-background bien-commencer-background atelier-1-background hidden"
+            src="css/patterns/backgroud-style-brown-fablab-g-5.jpg" alt="Bienvenue">
+        <img class="login-background acceler-emploi-background mon-espace-background"
+            src="css/patterns/backgroud-style-white-fablab-g-5.jpg" alt="Atellier 1 - Gagnez en confiance">
+    </div>
+
+    <div class="wrapper wrapper-content animated fadeInRight">
+        <section class="container">
+            <div class="row login align-items-center m-t-lg">
+                <div class="col-lg-5 text-center loginscreen animated fadeInDown">
+                    <div class="logo m-b-lg">
+                        <img src="img/logo-fablab-generation-5-partenaires.png" alt="logo">
+                    </div>
+                    <div class="ibox login  border-top-orange">
+                        <div class="ibox-content bg-nav p-5">
+                            <h1 class="text-white ">Se <span>Connecter</span></h1>
+                            <form class="m-t" role="form" action="index.html">
+                                <div class="form-group">
+                                    <label class="text-white" for="ident">Indentifiant</label>
+                                    <input type="text" class="form-control" name="ident" id="ident"
+                                        onKeyPress="xajax_vide_div('erreur')" onclick="xajax_vide_div('id')"
+                                        required="">
+                                </div>
+                                <div class="form-group">
+                                    <label class="text-white" for="pass">Mot de passe</label>
+                                    <input type="password" id='pass' name='pass' class="form-control"
+                                        onKeyPress="if (event.keyCode == 13){xajax_login(xajax.getFormValues('login'))};"
+                                        required="">
+                                </div>
+                                <button type="submit" data-content="mon-espace" class="btn-lg btn-primary btn-login"
+                                    onclick="xajax_login(xajax.getFormValues('login'));"><i
+                                        class="fa fa fa-arrow-right"></i></button>
+                            </form>
+
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+    </div>
+
+    </div>
+    <!-- Mainly scripts -->
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+
+    <!-- Custom Ingeneria 5.0 - Syswatis -->
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>
