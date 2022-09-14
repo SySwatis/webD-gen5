@@ -10132,10 +10132,10 @@ h1 > span,
   content: "%";
   position: absolute;
   font-size: 18px;
-  right: 0;
-  top: 0;
-  margin-top: 20%;
-  margin-right: 35%;
+  left: 50%;
+  top: 50%;
+  margin-top: -30px;
+  margin-left: 15px;
   color: #1a7bb9;
 }
 .circle-progress {
