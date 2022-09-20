@@ -19,19 +19,20 @@ var xajax_affiche_modules = null;
 
     // Add Sticky Mode
 
-    var header = $('.navbar-static-top');
-    var sticky = header.offset();
+    if( $('.navbar-static-top').length ){
+        var header = $('.navbar-static-top');
+        var sticky = header.offset();
 
-    $(window).scroll(function(){
-        if (window.pageYOffset > sticky.top) {
-            header.addClass('sticky');
-            $('body').addClass('navbar-sticky');
-        } else {
-            header.removeClass('sticky');
-            $('body').removeClass('navbar-sticky');
-        }
-    });
-
+        $(window).scroll(function(){
+            if (window.pageYOffset > sticky.top) {
+                header.addClass('sticky');
+                $('body').addClass('navbar-sticky');
+            } else {
+                header.removeClass('sticky');
+                $('body').removeClass('navbar-sticky');
+            }
+        });
+    }
 
     // Demo
 
@@ -42,6 +43,9 @@ var xajax_affiche_modules = null;
         page = content;
 		$.ajax({ url: "html/"+content+'.html?'+ Date.now(), dataType: 'html', 
 			success: function(response) {
+
+                Pace.restart();
+                console.log(Pace);
 
 				$('#features').html(response);
 
