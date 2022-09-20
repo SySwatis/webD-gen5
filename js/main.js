@@ -44,8 +44,8 @@ var xajax_affiche_modules = null;
 		$.ajax({ url: "html/"+content+'.html?'+ Date.now(), dataType: 'html', 
 			success: function(response) {
 
+                // restart pace loader spinner
                 Pace.restart();
-                console.log(Pace);
 
 				$('#features').html(response);
 

@@ -1030,6 +1030,9 @@ h5 {
 .profile-element .dropdown-toggle::after {
   display: none;
 }
+.pace-done .nav-header {
+  transition: all 0.4s;
+}
 ul.nav-second-level {
   background: #312f32;
 }
@@ -10157,6 +10160,11 @@ h1 > span,
   -ms-animation: pace-spinner 400ms linear infinite;
   -o-animation: pace-spinner 400ms linear infinite;
   animation: pace-spinner 400ms linear infinite;
+}
+@media only screen and (min-width: 768px) {
+  body:not(.mini-navbar) .pace .pace-activity {
+    margin-left: calc((220px/2) - 15px);
+  }
 }
 @-webkit-keyframes pace-spinner {
   0% {
