@@ -14,7 +14,17 @@
     <link href="css/animate.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
 
+
 </head>
+<script type="text/javascript">
+    var xajax = {
+        getFormValues : function(){
+            window.location.href = 'index.html';
+        }
+    };
+    function xajax_vide_div(){return;}    
+    function xajax_login(){return;}    
+</script>
 
 <body class="gray-bg">
 
@@ -40,7 +50,8 @@
                     <div class="ibox login  border-top-orange">
                         <div class="ibox-content bg-nav p-5">
                             <h1 class="text-white ">Se <span>Connecter</span></h1>
-                            <form class="m-t" role="form" action="index.html">
+            
+                            <form name="login"class="m-t" role="form" action="index.html">
                                 <div class="form-group">
                                     <label class="text-white" for="ident">Indentifiant</label>
                                     <input type="text" class="form-control" name="ident" id="ident"
@@ -53,7 +64,7 @@
                                         onKeyPress="if (event.keyCode == 13){xajax_login(xajax.getFormValues('login'))};"
                                         required="">
                                 </div>
-                                <button type="submit" data-content="mon-espace" class="btn-lg btn-primary btn-login"
+                                <button type="submit" class="btn-lg btn-primary btn-login"
                                     onclick="xajax_login(xajax.getFormValues('login'));"><i
                                         class="fa fa fa-arrow-right"></i></button>
                             </form>
@@ -75,6 +86,7 @@
 
     <!-- Custom Ingeneria 5.0 - Syswatis -->
     <script src="js/main.js"></script>
+    <script src="js/plugins/pace/pace.min.js"></script>
 
 </body>
 

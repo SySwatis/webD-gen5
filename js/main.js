@@ -1,5 +1,4 @@
 (function($){
-var xajax_affiche_modules = null;
 
     // Hide sideBar on Desktop
 
@@ -63,7 +62,10 @@ var xajax_affiche_modules = null;
                 $('.img-wrapper img').addClass('hidden');
                 $('.'+page+'-background').removeClass('hidden');
                 
-                if( page=="parcours" || page=="atelier-1" || page=="bien-commencer" ) {
+                if( page=="parcours" 
+                || page=="atelier-1" 
+                || page=="bien-commencer"
+                || page=="softskills" ) {
                     $('.img-wrapper').addClass('duotone');
                 }
 
@@ -78,10 +80,128 @@ var xajax_affiche_modules = null;
                 
                 // reInit
 
-                $('nav a, button').not('.navbar-minimalize').off();
+                $('nav a, button')
+                    .not('.navbar-minimalize')
+                    .not($('a[href="_#"]')).off();
+            
                 navAjax();
-                
+
                 console.log('ajax done ' + content);
+
+                // Slick - Test "SoftSkills"
+                
+                // Container
+                slickTestContainer = $('.slick-soft-skills');
+
+                // Init
+                slickTestContainer.slick({
+                    dots: false,
+                    arrows: false,
+                    draggable: false,
+                    infinite:false,
+                }).init(function(event,slick){
+
+                    // Debug
+                    // slickTestContainer.slick("slickGoTo",47);
+
+                    // Unset function xajax_ for the demo
+                    xajax_valide_test = function() {
+                        return;
+                    }
+                    xajax_ajoute_reponse = function() {
+                        return;
+                    }
+
+                    // Init Count
+                    testIni = '_1';
+                    countArray = $('#title-test'+testIni).data('count');
+                    $('.count').text(countArray[1]);
+                    $('.total').text(countArray[2]);
+                    
+
+                    // Button "Réponse"
+                  
+                    $(this).find('button.btn').not('.btn-prev').on('click',function(e){
+                     
+                        e.preventDefault();
+
+                        $(this).closest('.row').find('button').addClass('btn-default').removeClass('btn-primary')
+                        $(this).removeClass('btn-default').addClass('btn-primary');
+                        
+                        setTimeout(function(){ 
+                           slickTestContainer.slick("slickNext");
+                            // Add to count
+                            if(parseInt($('.count').text())<parseInt($('.total').text()))
+                           $('.count').text(parseInt($('.count').text())+1);
+                        },300);
+                
+                       
+                    })
+
+                    // Pagination
+
+                    // Button "a", continue or restart
+
+                    $(this).find('.btn').on('click',function(e){
+
+                        e.preventDefault();
+
+                        if($(this).hasClass('btn-restart')) {
+                            e.preventDefault();
+                            countTestArray = $('.title-test.active').data('count');
+                            slickTestContainer.slick("slickGoTo",( countTestArray[0]*(countTestArray[2]) - countTestArray[2]));
+                            // Reset count
+                            $('.count').text(1);
+                        }
+
+                        if($(this).hasClass('btn-prev')) {
+                            e.preventDefault();
+                            slickTestContainer.slick("slickPrev");
+
+                                countTestArray = $('.title-test.active').data('count');
+                              
+                                var currentSlide = slickTestContainer.slick('slickCurrentSlide')+1;
+
+                                newCount = countTestArray[2] - ((countTestArray[0] * countTestArray[2]) - currentSlide);
+                                
+                                // Refresh count
+
+                                if(newCount==0) {
+                                    // Prev Test
+                                    idTest = countTestArray[0]-1;
+                                    $('.title-test').addClass('hidden').removeClass('active');
+                                    $('#title-test_'+(idTest)).removeClass('hidden').addClass('active');
+                                    newCountArray = $('#title-test_'+(idTest)).data('count');
+                                    $('.count').text(newCountArray[2]);
+                                } else {
+                                    $('.count').text( newCount );
+                                }
+                        }
+                        if($(this).hasClass('btn-next')) {
+                            e.preventDefault();
+                            slickTestContainer.slick("slickNext");
+                        }
+                        if($(this).hasClass('btn-success')) {
+                            e.preventDefault();
+                            idTest = ($(this).data('valid'));
+                            
+                            $('.title-test').addClass('hidden').removeClass('active');
+                            
+                            $('#title-test_'+(idTest+1)).removeClass('hidden').addClass('active');
+                            
+                            newCountArray = $('#title-test_'+(idTest+1)).data('count');
+                            $('.count').text(newCountArray[1]);
+                            $('.total').text(newCountArray[2]);
+ 
+                        }
+
+                    });
+
+                });
+
+               // End Slick
+
+                // Pdf demo
 
                 $('a[data-action]').on('click',function(e){
                     e.preventDefault();
@@ -107,8 +227,6 @@ var xajax_affiche_modules = null;
                         $(this).find('i').toggleClass('fa-expand').toggleClass('fa-remove');
                         $('#features').toggleClass('container');
                     }
-                 
-                    
                 
                 });
                 
@@ -123,31 +241,41 @@ var xajax_affiche_modules = null;
 	}
    
     navAjax = function() {
-        $('nav a, button').on('click',function(e){
-            e.preventDefault(); 
-            if($(this).closest('li').length) {
-                $('nav li').not($(this).closest('li')).removeClass('active');
-                $(this).closest('li').addClass('active');
-                if($("body.mini-navbar").length){
-                $("body").removeClass("mini-navbar");
-                SmoothlyMenu();}
+       
+        $('nav.navbar-default a, button').on('click',function(e){
+
+            // Stop propagation
+            if($(this).attr('href')=="_#") {
+                e.preventDefault(); 
+            }
+         
+            // Not parent submenu
+            if(!$(this).find('.fa.arrow').length) {
+                e.preventDefault(); 
+                if($(this).closest('li').length) {
+                    $('nav li').not($(this).closest('li')).removeClass('active');
+                    $(this).closest('li').addClass('active');
+                    if($("body.mini-navbar").length){
+                        $("body").removeClass("mini-navbar");
+                        SmoothlyMenu();
+                    }
+                }
             }
             
             if( $(this).data('content') ) {
+                e.preventDefault();
                 $(window).scrollTop(0);
                 ajaxRequestHtml($(this).data('content'));
-                // navAjax();
             }
 
-			if($(this).attr('href')=="_#")
-			e.preventDefault(); 
         });
+
     }
 
     navAjax();
 
 	// Default content
-    ajaxRequestHtml('mon-espace');
+    ajaxRequestHtml('softskills');
 
     // $('.nav-header').on('click',function(){
     //     $('.img-wrapper').toggleClass('duotone');
