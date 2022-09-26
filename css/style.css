@@ -10275,18 +10275,18 @@ h1 > span,
 .slick-soft-skills.slick-slider {
   margin-bottom: 0;
 }
-.slick-soft-skills .row:not('.row-result') > div:first-of-type {
+.slick-soft-skills .row > div:first-of-type {
   font-size: 1.1em;
   font-style: italic;
   margin-top: 1em;
   margin-bottom: 1.5em;
 }
 @media only screen and (min-width: 768px) {
-  .slick-soft-skills .slick-track > div.row:not('.row-result') {
+  .slick-soft-skills .slick-track > div.row {
     margin-top: 4em;
     margin-bottom: 0;
   }
-  .slick-soft-skills .slick-track > div.row:not('.row-result') div:first-of-type {
+  .slick-soft-skills .slick-track > div.row div:first-of-type {
     font-size: 1.15em;
     padding-right: 2em;
     padding-left: 1.5em;
