@@ -28,7 +28,7 @@
   &.slick-slider {
     margin-bottom: 0;
   }
-  .row {
+  .row:not(.row-result) {
 
     > div:first-of-type {
       font-size: 1.1em;
@@ -63,7 +63,7 @@
   .slick-box-test,
   .slick-soft-skills {
     .slick-track {
-      > div.row {
+      > div.row:not(.row-result) {
         margin-top: 2em;
         margin-bottom: 0;
         div:first-of-type {
@@ -79,5 +79,4 @@
       }
     }
   }
-
 }

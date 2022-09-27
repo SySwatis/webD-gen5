@@ -10304,8 +10304,8 @@ h1 > span,
 .slick-soft-skills.slick-slider {
   margin-bottom: 0;
 }
-.slick-box-test .row > div:first-of-type,
-.slick-soft-skills .row > div:first-of-type {
+.slick-box-test .row:not(.row-result) > div:first-of-type,
+.slick-soft-skills .row:not(.row-result) > div:first-of-type {
   font-size: 1.1em;
   font-style: italic;
   margin-top: 1em;
@@ -10323,13 +10323,13 @@ h1 > span,
   }
 }
 @media only screen and (min-width: 992px) {
-  .slick-box-test .slick-track > div.row,
-  .slick-soft-skills .slick-track > div.row {
+  .slick-box-test .slick-track > div.row:not(.row-result),
+  .slick-soft-skills .slick-track > div.row:not(.row-result) {
     margin-top: 2em;
     margin-bottom: 0;
   }
-  .slick-box-test .slick-track > div.row div:first-of-type,
-  .slick-soft-skills .slick-track > div.row div:first-of-type {
+  .slick-box-test .slick-track > div.row:not(.row-result) div:first-of-type,
+  .slick-soft-skills .slick-track > div.row:not(.row-result) div:first-of-type {
     font-size: 1.25em;
     padding-right: 2em;
     padding-left: 1.5em;
