@@ -9801,8 +9801,8 @@ a {
 .hidden {
   display: none;
 }
-button,
-a {
+button:not(.btn-outline-secondary),
+a:not(.btn-outline-secondary) {
   border: 0 !important;
 }
 button.btn-lg,
@@ -10075,7 +10075,7 @@ h1 > span,
     padding: 0 !important;
     margin: 0 !important;
   }
-  .navbar-sticky div.row:not(.login):first-of-type .ibox:not(.border-top-orange) {
+  .navbar-sticky div.row:not(.login):first-of-type .ibox:not(.border-top-orange):not('.no-hidden') {
     height: 0;
     overflow: hidden;
   }
@@ -10148,6 +10148,14 @@ h1 > span,
 .circle-progress {
   width: 150px;
   height: auto;
+}
+.navbar-sticky .progress-ing5::after {
+  font-size: 13px;
+  margin-top: -25px;
+  margin-left: 10px;
+}
+.navbar-sticky .progress-ing5 .circle-progress {
+  width: 90px;
 }
 .circle-progress-value {
   stroke-width: 2px;

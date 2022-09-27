@@ -50,13 +50,16 @@
 
                 // 
                 if($('.progress-ing5').length)
-                $('.progress-ing5').circleProgress({
-                    max: 100,
-                    value: 75,
-                    textFormat: 'value',
-                    startAngle: -90,
-                    animationDuration: 1500
-                });
+                { 
+                    $('.progress-ing5').circleProgress({
+                        max: 100,
+                        value: 75,
+                        textFormat: 'value',
+                        startAngle: -90,
+                        animationDuration: 1500
+                    });
+                
+                }
 
                 $('.img-wrapper').removeClass('duotone');
                 $('.img-wrapper img').addClass('hidden');
@@ -102,6 +105,15 @@
                     swipe:false
                 }).init(function(event,slick){
 
+
+                    $('.progress-ing5').circleProgress({
+                        max: 100,
+                        value: 0,
+                        textFormat: 'value',
+                        startAngle: -90,
+                        animationDuration: 1500
+                    });
+
                     // Debug
                     // slickTestContainer.slick("slickGoTo",47);
 
@@ -125,20 +137,22 @@
                     $(this).find('button.btn').not('.btn-prev').on('click',function(e){
                      
                         e.preventDefault();
+                        $(this).closest('.row').find('button').removeClass('btn-primary valid');
+                        $(this).addClass('btn-primary valid');
 
-                       
-
-                        $(this).closest('.row').find('button').addClass('btn-default').removeClass('btn-primary')
-                        $(this).removeClass('btn-default').addClass('btn-primary');
+                        // Circle Progress
+                        nBtnTest = ($('.slick-box-test .row .btn-outline-secondary').not('.btn-restart').length)/4;
+                        nBtnTestValid = $('.slick-box-test .row .btn-outline-secondary.valid').length;
+                        // 4 col
+                        circleProgressVal =  ((nBtnTestValid / nBtnTest) * 100);
                         
-                        setTimeout(function(){ 
+                        setTimeout(function(){
+                            $('.progress-ing5').circleProgress({value:circleProgressVal});
                            slickTestContainer.slick("slickNext");
                             // Add to count
                             if(parseInt($('.count').text())<parseInt($('.total').text()))
                            $('.count').text(parseInt($('.count').text())+1);
                         },300);
-                
-                       
                     })
 
                     // Pagination
@@ -151,22 +165,28 @@
 
                         if($(this).hasClass('btn-restart')) {
                             e.preventDefault();
-                            
                             // Back to start (section)
                             var currentSlide = slickTestContainer.slick('slickCurrentSlide');
                             countTestArray = $('.title-test.active').data('count');
                             slickTestContainer.slick("slickGoTo",( (currentSlide + 1) - countTestArray[2]));
                             
-                            // Reset count
+                            // Reset count (section)
                             $('.count').text(1);
 
-                            // Reset active
+                            // Reset active (section)
                             slickTestContainer.find('.row.slick-slide').each(function(i,e){
                                 if($(this).data('slick-index')>currentSlide-countTestArray[2] && $(this).data('slick-index')<currentSlide) {
-                                    $(this).find('button').addClass('btn-default').removeClass('btn-primary');
+                                    $(this).find('button').removeClass('btn-primary valid');
                                 }
                             });
-                            
+
+                            // New Circle Progress (after reset section)
+                            // nBtnTest = ($('.slick-box-test .row .btn-outline-secondary').not('.btn-restart').length)/4;
+                            nBtnTestValid = $('.slick-box-test .row .btn-outline-secondary.valid').length;
+                            // 4 col
+                            newCircleProgressVal =  ((nBtnTestValid / nBtnTest) * 100);
+                            $('.progress-ing5').circleProgress({value:newCircleProgressVal});
+
                         }
 
                         if($(this).hasClass('btn-prev')) {
@@ -182,7 +202,7 @@
                             }
                             if( newCount==0 && currentSlide > 0 ) {
                                 countTestArray = $('.title-test.active').data('count');
-                                
+
                                 idTest = countTestArray[0]-1;
                                 $('.title-test').addClass('hidden').removeClass('active');
                                 $('#title-test_'+(idTest)).removeClass('hidden').addClass('active');
@@ -191,16 +211,6 @@
                                 $('.count').text(newCountArray[2]);
                                 $('.total').text(newCountArray[2]);
                             }
-                            // console.log(newCount);   
-                            // // Refresh count
-
-                            //     if(newCount==0) {
-                                 
-                            //         // Prev Test
-                           
-                            //     } else {
-                            //         $('.count').text( newCount );
-                            //     }
                         }
 
                         if($(this).hasClass('btn-next')) {

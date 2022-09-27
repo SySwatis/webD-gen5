@@ -20,7 +20,7 @@ a {
 // Button rounded
 
 button, a {
-  border: 0 !important;
+  &:not(.btn-outline-secondary) {border: 0 !important;}
   &.btn-lg {
     border-radius: 1.5rem;
   }
@@ -351,8 +351,6 @@ h1 > span,
         }
         h1 {
           font-size: 18px;
-          // left: -20px;
-          // position: relative;
           margin: 0;
         }
      
@@ -370,7 +368,7 @@ h1 > span,
         }
       }
 
-      .ibox:not(.border-top-orange) {
+      .ibox:not(.border-top-orange):not('.no-hidden') {
         height: 0;
         overflow: hidden;
       }
