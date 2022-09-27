@@ -99,6 +99,7 @@
                     arrows: false,
                     draggable: false,
                     infinite:false,
+                    swipe:false
                 }).init(function(event,slick){
 
                     // Debug
@@ -125,6 +126,8 @@
                      
                         e.preventDefault();
 
+                       
+
                         $(this).closest('.row').find('button').addClass('btn-default').removeClass('btn-primary')
                         $(this).removeClass('btn-default').addClass('btn-primary');
                         
@@ -148,39 +151,63 @@
 
                         if($(this).hasClass('btn-restart')) {
                             e.preventDefault();
+                            
+                            // Back to start (section)
+                            var currentSlide = slickTestContainer.slick('slickCurrentSlide');
                             countTestArray = $('.title-test.active').data('count');
-                            slickTestContainer.slick("slickGoTo",( countTestArray[0]*(countTestArray[2]) - countTestArray[2]));
+                            slickTestContainer.slick("slickGoTo",( (currentSlide + 1) - countTestArray[2]));
+                            
                             // Reset count
                             $('.count').text(1);
+
+                            // Reset active
+                            slickTestContainer.find('.row.slick-slide').each(function(i,e){
+                                if($(this).data('slick-index')>currentSlide-countTestArray[2] && $(this).data('slick-index')<currentSlide) {
+                                    $(this).find('button').addClass('btn-default').removeClass('btn-primary');
+                                }
+                            });
+                            
                         }
 
                         if($(this).hasClass('btn-prev')) {
                             e.preventDefault();
                             slickTestContainer.slick("slickPrev");
+                            
+                            currentSlide = slickTestContainer.slick('slickCurrentSlide');
+                        
+                            newCount = parseInt( $('.count').text() ) -1;
 
+                            if(newCount>=1) {
+                                $('.count').text( newCount );
+                            }
+                            if( newCount==0 && currentSlide > 0 ) {
                                 countTestArray = $('.title-test.active').data('count');
-                              
-                                var currentSlide = slickTestContainer.slick('slickCurrentSlide')+1;
-
-                                newCount = countTestArray[2] - ((countTestArray[0] * countTestArray[2]) - currentSlide);
                                 
-                                // Refresh count
+                                idTest = countTestArray[0]-1;
+                                $('.title-test').addClass('hidden').removeClass('active');
+                                $('#title-test_'+(idTest)).removeClass('hidden').addClass('active');
+                                
+                                newCountArray = $('#title-test_'+(idTest)).data('count');
+                                $('.count').text(newCountArray[2]);
+                                $('.total').text(newCountArray[2]);
+                            }
+                            // console.log(newCount);   
+                            // // Refresh count
 
-                                if(newCount==0) {
-                                    // Prev Test
-                                    idTest = countTestArray[0]-1;
-                                    $('.title-test').addClass('hidden').removeClass('active');
-                                    $('#title-test_'+(idTest)).removeClass('hidden').addClass('active');
-                                    newCountArray = $('#title-test_'+(idTest)).data('count');
-                                    $('.count').text(newCountArray[2]);
-                                } else {
-                                    $('.count').text( newCount );
-                                }
+                            //     if(newCount==0) {
+                                 
+                            //         // Prev Test
+                           
+                            //     } else {
+                            //         $('.count').text( newCount );
+                            //     }
                         }
+
                         if($(this).hasClass('btn-next')) {
                             e.preventDefault();
                             slickTestContainer.slick("slickNext");
                         }
+
                         if($(this).hasClass('btn-success')) {
                             e.preventDefault();
                             idTest = ($(this).data('valid'));
@@ -189,7 +216,8 @@
                             
                             $('#title-test_'+(idTest+1)).removeClass('hidden').addClass('active');
                             
-                            newCountArray = $('#title-test_'+(idTest+1)).data('count');
+                            newCountArray = $('.title-test.active').data('count');
+
                             $('.count').text(newCountArray[1]);
                             $('.total').text(newCountArray[2]);
  
