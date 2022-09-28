@@ -313,7 +313,7 @@
     navAjax();
 
 	// Default content
-    ajaxRequestHtml('bien-commencer');
+    ajaxRequestHtml('mon-espace');
 
     // $('.nav-header').on('click',function(){
     //     $('.img-wrapper').toggleClass('duotone');
