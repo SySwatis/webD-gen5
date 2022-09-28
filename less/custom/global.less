@@ -1,5 +1,14 @@
 /* Custom Design */
 
+// Transition
+
+.slimScrollBar, .fa, svg, .ibox, .ibox h1, .ibox h2, .ibox h3, .ibox p, .btn, a {
+      -webkit-transition: all 0.5s;
+      -moz-transition: all 0.5s;
+      -o-transition: all 0.5s;
+      transition: all 0.5s;
+    }
+
 // Nav
 
 .navbar-header {
@@ -324,55 +333,104 @@ h1 > span,
   // Reduce size
 
   .navbar-sticky {
+
     div.row:not(.login):first-of-type {
-      .ibox,
-      h1,
-      h2,
-      h3,
-      .fa,
-      div,
-      span,
-      p {
-        -webkit-transition: all 0.5s;
-        -moz-transition: all 0.5s;
-        -o-transition: all 0.5s;
-        transition: all 0.5s;
+     .col-lg-3 {
+      .ibox {
+        .stats {
+          margin-top: 0;
+        }
+      .fa, h3, .small, button {
+        display: none;
+      }}
+      .ibox-content div {
+        margin: 0 !important;
       }
-      .ibox.border-top-orange {
-        position: relative;
-        top: 12px;
-        h3,
-        button,
-        p {
-          height: 0 !important;
-          overflow: hidden !important;
-          padding: 0 !important;
-          margin: 0 !important;
-        }
-        h1 {
-          font-size: 18px;
-          margin: 0;
-        }
-     
-        .m-t-lg,
-        .m-b-lg {
-          margin: 0;
+        
+      }
+    }
+
+    .ibox {
+      &-progress-circle {
+        .heading, p {
+          opacity: 0;
+          visibility: hidden;
           height: 0;
           overflow: hidden;
         }
+      }
+      &.border-top-orange {
+        .ibox-content {
+          height: 72px;
+        }
+        h1 {
+          font-size: 24px;
+          margin: 2px 0;
+        }
+        p, h3, small {
+          width: 0;
+          height: 0;
+          opacity: 0;
+          visibility: hidden;
+         
+        }
         .fa {
           float: left;
-          font-size: 24px;
+          font-size: 32px;
           padding: 0 !important;
           margin: 0 !important;
+          + small, + p, + h3, + h4, +h5 {
+            font-size: 0;
+            opacity: 0;
+            visibility: hidden;
+            padding: 0;
+            margin: 0;
+          
+          }
         }
       }
-
-      .ibox:not(.border-top-orange):not('.no-hidden') {
-        height: 0;
-        overflow: hidden;
-      }
     }
+
+    // div.row:not(.login):first-of-type {
+    //   .ibox,
+    //   h1,
+    //   h2,
+    //   h3,
+    //   .fa,
+    //   div,
+    //   span,
+    //   p {
+    //     -webkit-transition: all 0.5s;
+    //     -moz-transition: all 0.5s;
+    //     -o-transition: all 0.5s;
+    //     transition: all 0.5s;
+    //   }
+    //   .ibox.border-top-orange {
+    //     position: relative;
+    //     top: 12px;
+    //     h3,
+    //     button,
+    //     p {
+    //       height: 0 !important;
+    //       overflow: hidden !important;
+    //       padding: 0 !important;
+    //       margin: 0 !important;
+    //     }
+    //     h1 {
+    //       font-size: 18px;
+    //       margin: 0;
+    //     }
+    //     .m-t-lg,
+    //     .m-b-lg {
+    //       margin: 0;
+    //       height: 0;
+    //       overflow: hidden;
+    //     }
+        
+    //   }
+
+      
+    // }
   }
 }
 @media only screen and (max-width: 767px) {

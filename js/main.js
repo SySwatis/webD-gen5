@@ -313,7 +313,7 @@
     navAjax();
 
 	// Default content
-    ajaxRequestHtml('softskills');
+    ajaxRequestHtml('bien-commencer');
 
     // $('.nav-header').on('click',function(){
     //     $('.img-wrapper').toggleClass('duotone');

@@ -9791,6 +9791,21 @@ body.md-skin {
   }
 }
 /* Custom Design */
+.slimScrollBar,
+.fa,
+svg,
+.ibox,
+.ibox h1,
+.ibox h2,
+.ibox h3,
+.ibox p,
+.btn,
+a {
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+}
 .navbar-header > a:first-child {
   position: fixed;
   z-index: 10;
@@ -10034,50 +10049,56 @@ h1 > span,
     max-width: 80%;
     margin: 0 auto;
   }
-  .navbar-sticky div.row:not(.login):first-of-type .ibox,
-  .navbar-sticky div.row:not(.login):first-of-type h1,
-  .navbar-sticky div.row:not(.login):first-of-type h2,
-  .navbar-sticky div.row:not(.login):first-of-type h3,
-  .navbar-sticky div.row:not(.login):first-of-type .fa,
-  .navbar-sticky div.row:not(.login):first-of-type div,
-  .navbar-sticky div.row:not(.login):first-of-type span,
-  .navbar-sticky div.row:not(.login):first-of-type p {
-    -webkit-transition: all 0.5s;
-    -moz-transition: all 0.5s;
-    -o-transition: all 0.5s;
-    transition: all 0.5s;
+  .navbar-sticky div.row:not(.login):first-of-type .col-lg-3 .ibox .stats {
+    margin-top: 0;
   }
-  .navbar-sticky div.row:not(.login):first-of-type .ibox.border-top-orange {
-    position: relative;
-    top: 12px;
+  .navbar-sticky div.row:not(.login):first-of-type .col-lg-3 .ibox .fa,
+  .navbar-sticky div.row:not(.login):first-of-type .col-lg-3 .ibox h3,
+  .navbar-sticky div.row:not(.login):first-of-type .col-lg-3 .ibox .small,
+  .navbar-sticky div.row:not(.login):first-of-type .col-lg-3 .ibox button {
+    display: none;
   }
-  .navbar-sticky div.row:not(.login):first-of-type .ibox.border-top-orange h3,
-  .navbar-sticky div.row:not(.login):first-of-type .ibox.border-top-orange button,
-  .navbar-sticky div.row:not(.login):first-of-type .ibox.border-top-orange p {
-    height: 0 !important;
-    overflow: hidden !important;
-    padding: 0 !important;
+  .navbar-sticky div.row:not(.login):first-of-type .col-lg-3 .ibox-content div {
     margin: 0 !important;
   }
-  .navbar-sticky div.row:not(.login):first-of-type .ibox.border-top-orange h1 {
-    font-size: 18px;
-    margin: 0;
-  }
-  .navbar-sticky div.row:not(.login):first-of-type .ibox.border-top-orange .m-t-lg,
-  .navbar-sticky div.row:not(.login):first-of-type .ibox.border-top-orange .m-b-lg {
-    margin: 0;
+  .navbar-sticky .ibox-progress-circle .heading,
+  .navbar-sticky .ibox-progress-circle p {
+    opacity: 0;
+    visibility: hidden;
     height: 0;
     overflow: hidden;
   }
-  .navbar-sticky div.row:not(.login):first-of-type .ibox.border-top-orange .fa {
-    float: left;
+  .navbar-sticky .ibox.border-top-orange .ibox-content {
+    height: 72px;
+  }
+  .navbar-sticky .ibox.border-top-orange h1 {
     font-size: 24px;
+    margin: 2px 0;
+  }
+  .navbar-sticky .ibox.border-top-orange p,
+  .navbar-sticky .ibox.border-top-orange h3,
+  .navbar-sticky .ibox.border-top-orange small {
+    width: 0;
+    height: 0;
+    opacity: 0;
+    visibility: hidden;
+  }
+  .navbar-sticky .ibox.border-top-orange .fa {
+    float: left;
+    font-size: 32px;
     padding: 0 !important;
     margin: 0 !important;
   }
-  .navbar-sticky div.row:not(.login):first-of-type .ibox:not(.border-top-orange):not('.no-hidden') {
-    height: 0;
-    overflow: hidden;
+  .navbar-sticky .ibox.border-top-orange .fa + small,
+  .navbar-sticky .ibox.border-top-orange .fa + p,
+  .navbar-sticky .ibox.border-top-orange .fa + h3,
+  .navbar-sticky .ibox.border-top-orange .fa + h4,
+  .navbar-sticky .ibox.border-top-orange .fa + h5 {
+    font-size: 0;
+    opacity: 0;
+    visibility: hidden;
+    padding: 0;
+    margin: 0;
   }
 }
 /* Duotone */
