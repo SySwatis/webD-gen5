@@ -44,7 +44,6 @@ a {
     border: 0 !important;
   }
   &.btn-prev-small {
-    
   }
   &.btn-lg {
     border-radius: 1.5rem;
@@ -66,7 +65,6 @@ input.form-control {
 // Ibox rounded
 
 .ibox {
-
   &-content {
     border-radius: @btn-border-radius;
     .fa {
@@ -113,8 +111,8 @@ input.form-control {
   }
 
   .ibox-title {
-     border-top-left-radius:  @btn-border-radius;
-      border-top-right-radius:  @btn-border-radius;
+    border-top-left-radius: @btn-border-radius;
+    border-top-right-radius: @btn-border-radius;
     + .ibox-content {
       border-top-left-radius: 0;
       border-top-right-radius: 0;
@@ -163,6 +161,8 @@ input.form-control {
   background-color: transparent;
   padding: 0;
 }
+
+// Expand
 
 // Label notifications
 
@@ -304,12 +304,7 @@ h1 > span,
   max-width: 100%;
 }
 
-
-
-
 @media only screen and (min-width: 768px) {
-
-
   // User Menu
 
   .navbar-top-links {
@@ -345,7 +340,6 @@ h1 > span,
   .ibox-title-test {
     padding-right: 280px;
   }
- 
 
   // Login
 
@@ -366,23 +360,25 @@ h1 > span,
   // Reduce size
 
   .navbar-sticky {
-    
-      .row.mt-lg-4 {
-        margin-top: 0 !important;
-      }
-    
+
+    .row.mt-lg-4 {
+      margin-top: 0 !important;
+    }
     .prev-box {
       margin: 0 0 1em !important;
       h3 {
         display: none;
-       
       }
     }
     .ibox {
       &.border-top-orange {
         margin-bottom: 1em;
         .ibox-content {
-          h2, h3, h4, .stats span {
+          h2,
+          h3,
+          h4,
+          p,
+          .stats span {
             display: none;
           }
           h1 {
@@ -395,7 +391,8 @@ h1 > span,
             padding: 0 !important;
             margin: 0 !important;
           }
-          .progress-bar, .progress-small {
+          .progress-bar,
+          .progress-small {
             height: 5px;
           }
         }
@@ -413,7 +410,7 @@ h1 > span,
   }
 }
 
-/* Blog */ 
+/* Blog */
 
 .blog {
   .ibox {
@@ -424,7 +421,6 @@ h1 > span,
       }
       p {
         font-size: 15px;
-       
       }
     }
   }
@@ -434,7 +430,8 @@ h1 > span,
 }
 
 @media only screen and (max-width: 767px) {
-  .btn.btn-prev-small { 
-    width: 100%; 
-    display:block; }
+  .btn.btn-prev-small {
+    width: 100%;
+    display: block;
+  }
 }

@@ -2,7 +2,7 @@
 
   // Config
 
-  defaultContent = 'bien-commencer';
+  defaultContent = 'atelier-1';
 
   // Hide sideBar on Desktop
 
@@ -63,21 +63,13 @@
           });
         }
 
-        // $('.img-wrapper').removeClass('duotone');
-        // $('.img-wrapper img').addClass('hidden');
-        // $('.'+page+'-background').removeClass('hidden');
-
-        // if( page=="parcours"
-        // || page=="atelier-1"
-        // || page=="bien-commencer"
-        // || page=="softskills" ) {
-        //     $('.img-wrapper').addClass('duotone');
-        // }
+        // Imgage Background
 
         $(".img-wrapper").attr("class","img-wrapper");
         $(".img-wrapper img").addClass("hidden");
         if ($("#features > .row").first().data("background")) {
           bgEl = $("#features > .row").first().data("background");
+          // Data jSon
           $(".img-wrapper").addClass(bgEl.effect);
           $(".img-wrapper img." + bgEl.name).removeClass("hidden");
         } else {
@@ -312,15 +304,22 @@
             );
           }
 
+          $("#features").addClass('container');
+          
           if ($(this).data("action") == "expand") {
-            $(this).find("i").toggleClass("fa-expand").toggleClass("fa-remove");
-            $("#features").toggleClass("container");
+            $(this).find("i").toggleClass("fa-expand").toggleClass("fa-compress");
+            // Toggle Modal
+            if($('#classRoom').hasClass('modal')) {
+              $('#classRoom').removeClass('modal').modal('hide').show();
+            } else {
+              $('#classRoom').addClass('modal').modal('show');
+            }
+       
           }
         });
       },
       error: function () {
         ajaxRequestHtml("404");
-        $("a, button").not(".navbar-minimalize").off();
         sessionStorage.removeItem("home");
       },
     });

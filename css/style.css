@@ -10078,6 +10078,7 @@ h1 > span,
   .navbar-sticky .ibox.border-top-orange .ibox-content h2,
   .navbar-sticky .ibox.border-top-orange .ibox-content h3,
   .navbar-sticky .ibox.border-top-orange .ibox-content h4,
+  .navbar-sticky .ibox.border-top-orange .ibox-content p,
   .navbar-sticky .ibox.border-top-orange .ibox-content .stats span {
     display: none;
   }
