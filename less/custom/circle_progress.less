@@ -13,6 +13,7 @@
     }
 }
 .circle-progress {
+    z-index: 1;
     width: 150px;
     height: auto;
 }
@@ -27,16 +28,41 @@
 }
 
 .circle-progress-value {
-	stroke-width: 2px;
+	stroke-width: 8px;
 	stroke: @blue;
 }
 .circle-progress-circle {
 	stroke: rgba(255, 255, 255, 1);
 	stroke-width: 8px;
 	fill:rgba(255, 255, 255, 0.6);
+
+}
+.ibox-progress-circle-white {
+    .circle-progress-circle {
+        stroke: rgba(255, 255, 255, 0.3);
+        stroke-width: 8px;
+        fill:transparent;
+   
+    }
+    .circle-progress-value {
+        stroke-width: 8px;
+        stroke: #FFF;
+    }
+    .progress-ing5 {
+    &::after {
+        color: #FFF;
+
+
+    }
+    .circle-progress-text {
+        fill: #FFF;
+        
+    }
+}
 }
 .circle-progress-text {
 	font-family: inherit;
 	font-size: 18px;
+    font-weight: 600;
 	fill: @blue;
 }

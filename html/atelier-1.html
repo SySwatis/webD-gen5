@@ -1,17 +1,21 @@
-<div class="row align-items-center">
+<div class="row align-items-center" data-background='{"name":"brown","effect":"duotone"}'>
+   
+    <div class="col-lg-5 animated fadeInRight">
+        
+        <div class="prev-box m-t-lg m-b-lg text-left">
+            <button type="button" data-content="parcours" class="btn btn-primary btn-prev-small"> <span
+                class="fa fa-arrow-left mr-2"></span><span class="mr-2">Revenir à</span><b>Mon Parcours</b><i class="fa fa-line-chart pl-2 pr-1"></i></button>
+        </div>
 
-    <div class="col-lg-5 animated fadeInRight text-center">
-        <div class="ibox border-top-orange">
+        <div class="ibox border-top-orange text-center">
             <div class=" bg-nav text-white ibox-content">
-                <span class="fa-2x fa fa-line-chart m-3"></span>
-                <h3>
-                    Mon <span>Parcours</span>
-                </h3>
-                <h1>Atelier <span>1</span></h1>
-                <div class="m-t-lg m-b-lg">
-                    <button type="button" data-content="parcours" class="btn btn-primary m-b-xs"><span
-                            class="fa fa-arrow-left"></span> Revenir à la
-                        liste</button>
+                <span class="fa fa-angellist fa-3x p-3" aria-hidden="true"></span>
+                <h1>Gagnez en <span>Confiance</span></h1>
+                <div class="stats mt-4 mb-1">
+                    <span class="small">Progression<span class="float-right mt-1">1/3</span></span>
+                    <div class="progress progress-small">
+                        <div style="width: 33%;" class="progress-bar bg-blue"></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -22,33 +26,23 @@
         <!-- empty -->
     </div>
 
-    <div class="col-lg-3 text-center ">
-        <div class="ibox">
-            <div class="ibox-content p-4">
-                <i class="fa fa-angellist fa-3x" aria-hidden="true"></i>
-                <h3 class="p-1">Gagnez en <span>Confiance</span></h3>
-                <div class="stats mt-3 mb-1">
-                    <div class="mt-2">
-                        <span class="small">Progression</span>
-                        <small class="small float-right">6/15</small>
-                    </div>
-                    <div class="progress progress-small">
-                        <div style="width: 40%;" class="progress-bar bg-blue"></div>
-                    </div>
-                    <div class="m-t-lg">
-                        <button data-action="restart" type="button" class="btn btn-success action">Reprendre</button>
-                    </div>
+    <div class="col-lg-3 text-center d-none d-lg-block">
+        <div class="ibox ibox-progress-circle ibox-progress-circle-white float-right">
+            <div class="ibox-content ibox-content-transparent text-center">
+                <div class="heading p-2 text-white">
+                    <h3><i class="fa fa-line-chart pl-2 pr-1"></i> Mon <span>Parcours</span></h3>
+                    <p class="small">Total progression</p>
                 </div>
+                <div class="progress-ing5"></div>
             </div>
         </div>
-
     </div>
-
+    
 </div>
 
-<div id="classRoom" class="row align-items-middle m-t-lg">
+<div id="classRoom" class="row align-items-middle mt-lg-4">
 
-    <div class="col animated fadeInRight m-t-lg">
+    <div class="col animated fadeInRight">
         <div class="ibox">
             <div class="ibox-content">
                 <button data-action="expand" class="btn float-right action"><i class="fa fa-2x fa-expand"></i></button>
@@ -302,21 +296,18 @@
 <!-- only for mobile duplicate block -->
 <div class="row d-lg-none d-xs-block">
     <div class="col-lg-3 text-center ">
-
-        <div class="ibox">
-            <div class="ibox-content ibox-content-transparent-lg">
-                <div class="p-2">
-                    <h2 class="text-white-lg">Total <span>Progression</span></h2>
+        <div class="ibox ibox-progress-circle-white">
+            <div class="ibox-content ibox-content-transparent text-center">
+                <div class="heading p-2 text-white">
+                    <p>Total <b>Progression</b></p>
                 </div>
                 <div class="progress-ing5"></div>
-                <!-- <button data-content="parcours" type="button"
-                    class="btn btn-primary btn-block btn-success m-t-lg">Poursuivre <i
-                        class="fa fa-arrow-right"></i></button> -->
-
             </div>
         </div>
     </div>
 </div>
+
+
 
 <script id="script">
     //
