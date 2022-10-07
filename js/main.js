@@ -2,7 +2,7 @@
 
   // Config
 
-  defaultContent = 'atelier-1';
+  defaultContent = 'actualites';
 
   // Hide sideBar on Desktop
 

@@ -53,6 +53,10 @@ a {
     height: 50px;
     border-radius: 50px;
   }
+  &.btn.btn-xs {
+    font-size: 13px;
+    padding: 0.2rem 0.6rem;
+  }
 }
 
 // Input rounded
@@ -65,17 +69,20 @@ input.form-control {
 // Ibox rounded
 
 .ibox {
+
   &-content {
     border-radius: @btn-border-radius;
     .fa {
       position: relative;
     }
   }
+
   &-title-orange {
     background-color: @orange;
     color: #fff;
     border: none;
   }
+
   &-title-test {
     padding-right: 120px;
   }
@@ -135,23 +142,47 @@ input.form-control {
     border-right: none;
     border-bottom: none;
   }
-}
 
-.ibox-background-orange {
-  .ibox-content {
-    border: none;
-    background-color: @orange;
-    .fa,
-    p,
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    span,
-    ul,
-    li {
-      color: #fff;
+  &-background-orange {
+    .ibox-content {
+      background-color: @orange;
+      
+    }
+  }
+
+  &-background-brown {
+    .ibox-content {
+      background-color: @brown;
+    }
+  }
+
+  &-background-orange, 
+  &-background-brown {
+    .btn.btn-xs {
+      color: @text-color !important;
+    }
+    .ibox-content {
+      border: none;
+      a {
+        color: #fff;
+      }
+      .btn {
+        background-color: white;
+      }
+      .fa,
+      p,
+      .text-muted,
+      div,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      span,
+      ul,
+      li {
+        color: #fff !important;
+      }
     }
   }
 }
@@ -414,6 +445,10 @@ h1 > span,
 
 .blog {
   .ibox {
+    p a {
+      font-weight: 600;
+    }
+    
     &-content {
       line-height: 1.7rem !important;
       img + p {

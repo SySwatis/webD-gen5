@@ -9831,6 +9831,11 @@ a.btn-login {
   height: 50px;
   border-radius: 50px;
 }
+button.btn.btn-xs,
+a.btn.btn-xs {
+  font-size: 13px;
+  padding: 0.2rem 0.6rem;
+}
 input.form-control {
   border-radius: 1.125rem;
   height: calc(1.5em + 0.75rem + 6px);
@@ -9900,20 +9905,52 @@ input.form-control {
   border-bottom: none;
 }
 .ibox-background-orange .ibox-content {
-  border: none;
   background-color: #f36506;
 }
-.ibox-background-orange .ibox-content .fa,
-.ibox-background-orange .ibox-content p,
-.ibox-background-orange .ibox-content h1,
-.ibox-background-orange .ibox-content h2,
-.ibox-background-orange .ibox-content h3,
-.ibox-background-orange .ibox-content h4,
-.ibox-background-orange .ibox-content h5,
-.ibox-background-orange .ibox-content span,
-.ibox-background-orange .ibox-content ul,
-.ibox-background-orange .ibox-content li {
+.ibox-background-brown .ibox-content {
+  background-color: #39363a;
+}
+.ibox-background-orange .btn.btn-xs,
+.ibox-background-brown .btn.btn-xs {
+  color: #333333 !important;
+}
+.ibox-background-orange .ibox-content,
+.ibox-background-brown .ibox-content {
+  border: none;
+}
+.ibox-background-orange .ibox-content a,
+.ibox-background-brown .ibox-content a {
   color: #fff;
+}
+.ibox-background-orange .ibox-content .btn,
+.ibox-background-brown .ibox-content .btn {
+  background-color: white;
+}
+.ibox-background-orange .ibox-content .fa,
+.ibox-background-brown .ibox-content .fa,
+.ibox-background-orange .ibox-content p,
+.ibox-background-brown .ibox-content p,
+.ibox-background-orange .ibox-content .text-muted,
+.ibox-background-brown .ibox-content .text-muted,
+.ibox-background-orange .ibox-content div,
+.ibox-background-brown .ibox-content div,
+.ibox-background-orange .ibox-content h1,
+.ibox-background-brown .ibox-content h1,
+.ibox-background-orange .ibox-content h2,
+.ibox-background-brown .ibox-content h2,
+.ibox-background-orange .ibox-content h3,
+.ibox-background-brown .ibox-content h3,
+.ibox-background-orange .ibox-content h4,
+.ibox-background-brown .ibox-content h4,
+.ibox-background-orange .ibox-content h5,
+.ibox-background-brown .ibox-content h5,
+.ibox-background-orange .ibox-content span,
+.ibox-background-brown .ibox-content span,
+.ibox-background-orange .ibox-content ul,
+.ibox-background-brown .ibox-content ul,
+.ibox-background-orange .ibox-content li,
+.ibox-background-brown .ibox-content li {
+  color: #fff !important;
 }
 .ibox-content-transparent {
   border: none;
@@ -10105,6 +10142,9 @@ h1 > span,
   }
 }
 /* Blog */
+.blog .ibox p a {
+  font-weight: 600;
+}
 .blog .ibox-content {
   line-height: 1.7rem !important;
 }
