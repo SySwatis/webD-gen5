@@ -11,7 +11,6 @@ svg,
 .ibox h3,
 .ibox p,
 .btn,
-.prev-box,
 a {
   -webkit-transition: all 0.5s;
   -moz-transition: all 0.5s;
@@ -25,7 +24,12 @@ a {
   > a:first-child {
     position: fixed;
     z-index: 10;
+    margin:20px;
   }
+}
+
+.nav-second-level li:last-child {
+  padding: 0 4px;
 }
 
 a {
@@ -34,6 +38,10 @@ a {
 
 .hidden {
   display: none;
+}
+
+.prev-box {
+  margin:15px 15px 0 15px;
 }
 
 // Button rounded
@@ -223,7 +231,7 @@ input.form-control {
 // Title and bolder
 
 h1 > span,
-.ibox h2 > span {
+h2 > span {
   font-weight: 900;
   font-size: 1.2em;
 }
@@ -402,6 +410,12 @@ h1 > span,
       }
     }
     .ibox {
+      &-sticky-hidden {
+        height: 0;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+      }
       &.border-top-orange {
         margin-bottom: 1em;
         .ibox-content {
@@ -429,7 +443,10 @@ h1 > span,
         }
       }
       &-progress-circle {
-        .heading,
+        .heading {
+          height: 36px;
+        }
+        .heading h3,
         p {
           opacity: 0;
           visibility: hidden;
@@ -462,6 +479,16 @@ h1 > span,
 }
 
 @media only screen and (min-width: 992px) {
+
+  .navbar-sticky .progress-ing5 {
+    &::after {
+        font-size: 13px;
+        margin-top: -25px;
+        margin-left: 10px;
+    }
+    .circle-progress {
+    width: 90px;}
+}
 }
 
 @media only screen and (max-width: 767px) {

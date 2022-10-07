@@ -9800,7 +9800,6 @@ svg,
 .ibox h3,
 .ibox p,
 .btn,
-.prev-box,
 a {
   -webkit-transition: all 0.5s;
   -moz-transition: all 0.5s;
@@ -9810,12 +9809,19 @@ a {
 .navbar-header > a:first-child {
   position: fixed;
   z-index: 10;
+  margin: 20px;
+}
+.nav-second-level li:last-child {
+  padding: 0 4px;
 }
 a {
   color: #39363a;
 }
 .hidden {
   display: none;
+}
+.prev-box {
+  margin: 15px 15px 0 15px;
 }
 button:not(.btn-outline-secondary),
 a:not(.btn-outline-secondary) {
@@ -9977,7 +9983,7 @@ input.form-control {
   margin-right: -12px;
 }
 h1 > span,
-.ibox h2 > span {
+h2 > span {
   font-weight: 900;
   font-size: 1.2em;
 }
@@ -10109,6 +10115,12 @@ h1 > span,
   .navbar-sticky .prev-box h3 {
     display: none;
   }
+  .navbar-sticky .ibox-sticky-hidden {
+    height: 0;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
   .navbar-sticky .ibox.border-top-orange {
     margin-bottom: 1em;
   }
@@ -10133,7 +10145,10 @@ h1 > span,
   .navbar-sticky .ibox.border-top-orange .ibox-content .progress-small {
     height: 5px;
   }
-  .navbar-sticky .ibox-progress-circle .heading,
+  .navbar-sticky .ibox-progress-circle .heading {
+    height: 36px;
+  }
+  .navbar-sticky .ibox-progress-circle .heading h3,
   .navbar-sticky .ibox-progress-circle p {
     opacity: 0;
     visibility: hidden;
@@ -10153,6 +10168,16 @@ h1 > span,
 }
 .blog .ibox-content p {
   font-size: 15px;
+}
+@media only screen and (min-width: 992px) {
+  .navbar-sticky .progress-ing5::after {
+    font-size: 13px;
+    margin-top: -25px;
+    margin-left: 10px;
+  }
+  .navbar-sticky .progress-ing5 .circle-progress {
+    width: 90px;
+  }
 }
 @media only screen and (max-width: 767px) {
   .btn.btn-prev-small {
@@ -10230,14 +10255,6 @@ h1 > span,
   width: 150px;
   height: auto;
 }
-.navbar-sticky .progress-ing5::after {
-  font-size: 13px;
-  margin-top: -25px;
-  margin-left: 10px;
-}
-.navbar-sticky .progress-ing5 .circle-progress {
-  width: 90px;
-}
 .circle-progress-value {
   stroke-width: 8px;
   stroke: #1a7bb9;
@@ -10254,12 +10271,42 @@ h1 > span,
 }
 .ibox-progress-circle-white .circle-progress-value {
   stroke-width: 8px;
-  stroke: #FFF;
+  stroke: #fff;
 }
 .ibox-progress-circle-white .progress-ing5::after {
-  color: #FFF;
+  color: #fff;
 }
 .ibox-progress-circle-white .progress-ing5 .circle-progress-text {
+  fill: #fff;
+}
+.ibox-progress-circle-yellow .circle-progress-circle {
+  stroke: rgba(255, 255, 255, 0.3);
+  stroke-width: 8px;
+  fill: transparent;
+}
+.ibox-progress-circle-yellow .circle-progress-value {
+  stroke-width: 8px;
+  stroke: #f8ac59;
+}
+.ibox-progress-circle-yellow .progress-ing5::after {
+  color: #FFF;
+}
+.ibox-progress-circle-yellow .progress-ing5 .circle-progress-text {
+  fill: #FFF;
+}
+.ibox-progress-circle-blue .circle-progress-circle {
+  stroke: rgba(255, 255, 255, 0.3);
+  stroke-width: 8px;
+  fill: transparent;
+}
+.ibox-progress-circle-blue .circle-progress-value {
+  stroke-width: 8px;
+  stroke: #1a7bb9;
+}
+.ibox-progress-circle-blue .progress-ing5::after {
+  color: #FFF;
+}
+.ibox-progress-circle-blue .progress-ing5 .circle-progress-text {
   fill: #FFF;
 }
 .circle-progress-text {

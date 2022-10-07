@@ -2,7 +2,7 @@
 
   // Config
 
-  defaultContent = 'actualites';
+  defaultContent = 'softskills';
 
   // Hide sideBar on Desktop
 
