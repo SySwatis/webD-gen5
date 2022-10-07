@@ -2,7 +2,7 @@
 
   // Config
 
-  defaultContent = 'softskills';
+  defaultContent = 'mon-espace';
 
   // Hide sideBar on Desktop
 
@@ -112,13 +112,13 @@
               swipe: false,
             })
             .init(function (event, slick) {
-              $(".progress-ing5").circleProgress({
-                max: 100,
-                value: 0,
-                textFormat: "value",
-                startAngle: -90,
-                animationDuration: 1500,
-              });
+              // $(".progress-ing5").circleProgress({
+              //   max: 100,
+              //   value: 0,
+              //   textFormat: "value",
+              //   startAngle: -90,
+              //   animationDuration: 1500,
+              // });
 
               // Debug
               // slickTestContainer.slick("slickGoTo",47);
@@ -159,12 +159,14 @@
                     ".slick-box-test .row .btn-outline-secondary.valid"
                   ).length;
                   // 4 col
-                  circleProgressVal = (nBtnTestValid / nBtnTest) * 100;
+                  // circleProgressVal = (nBtnTestValid / nBtnTest) * 100;
+                  barProgressVal = (nBtnTestValid / nBtnTest) * 100;
 
                   setTimeout(function () {
-                    $(".progress-ing5").circleProgress({
-                      value: circleProgressVal,
-                    });
+                    // $(".progress-ing5").circleProgress({
+                    //   value: circleProgressVal,
+                    // });
+                    $('.progress-bar').css('width',barProgressVal+'%');
                     slickTestContainer.slick("slickNext");
                     // Add to count
                     if (
@@ -219,10 +221,12 @@
                       ".slick-box-test .row .btn-outline-secondary.valid"
                     ).length;
                     // 4 col
-                    newCircleProgressVal = (nBtnTestValid / nBtnTest) * 100;
-                    $(".progress-ing5").circleProgress({
-                      value: newCircleProgressVal,
-                    });
+                    // newCircleProgressVal = (nBtnTestValid / nBtnTest) * 100;
+                    // $(".progress-ing5").circleProgress({
+                    //   value: newCircleProgressVal,
+                    // });
+                    newbarProgressVal = (nBtnTestValid / nBtnTest) * 100;
+                    $('.progress-bar').css('width',newbarProgressVal+'%');
                   }
 
                   if ($(this).hasClass("btn-prev")) {

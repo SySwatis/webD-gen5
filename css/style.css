@@ -10280,7 +10280,7 @@ h2 > span {
   fill: #fff;
 }
 .ibox-progress-circle-yellow .circle-progress-circle {
-  stroke: rgba(255, 255, 255, 0.3);
+  stroke: #ffffff;
   stroke-width: 8px;
   fill: transparent;
 }
@@ -10295,7 +10295,7 @@ h2 > span {
   fill: #FFF;
 }
 .ibox-progress-circle-blue .circle-progress-circle {
-  stroke: rgba(255, 255, 255, 0.3);
+  stroke: #ffffff;
   stroke-width: 8px;
   fill: transparent;
 }
