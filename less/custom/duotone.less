@@ -1,56 +1,55 @@
 /* Duotone */
 
 :root .duotone {
-    --base: #f6f5f4;
-    --bg-blend: unset;
-    --blur: 0px;
-    --fg-blend: overlay;
-    --foreground: #79747d;
-    --opacity: 1;
-    --spacing: 0px;
-  }
-  .img-wrapper.duotone {
-    background-color: var(--base);
-  }
-  .img-wrapper {
-  
-    display: flex;
-    flex: 1 1 100%;
-    height: 100%;
-    overflow: hidden;
-    padding: var(--spacing);
-  
-    z-index: 0;
-    position: fixed;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-  }
-  .img-wrapper img {
-    flex: 1 0 100%;
-    height: 100%;
-    min-height: 100%;
-    width: 100%;
-    object-fit: cover;
-  }
-  
-  .img-wrapper.duotone img {
-    filter: grayscale(100%) contrast(1) blur(var(--blur));
-    mix-blend-mode: var(--bg-blend);
-    opacity: var(--opacity);
-  }
-  
-  .img-wrapper::before {
-    background-color: var(--foreground);
-    bottom: 0;
-    content: "";
-    height: 100%;
-    left: 0;
-    mix-blend-mode: var(--fg-blend);
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: 100%;
-    z-index: 1;
-  }
+  --base: #f6f5f4;
+  --bg-blend: unset;
+  --blur: 0px;
+  --fg-blend: overlay;
+  --foreground: #79747d;
+  --opacity: 1;
+  --spacing: 0px;
+}
+.img-wrapper.duotone {
+  background-color: var(--base);
+}
+.img-wrapper {
+  display: flex;
+  flex: 1 1 100%;
+  height: 100%;
+  overflow: hidden;
+  padding: var(--spacing);
+
+  z-index: 0;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+.img-wrapper img {
+  flex: 1 0 100%;
+  height: 100%;
+  min-height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.img-wrapper.duotone img {
+  filter: grayscale(100%) contrast(1) blur(var(--blur));
+  mix-blend-mode: var(--bg-blend);
+  opacity: var(--opacity);
+}
+
+.img-wrapper::before {
+  background-color: var(--foreground);
+  bottom: 0;
+  content: "";
+  height: 100%;
+  left: 0;
+  mix-blend-mode: var(--fg-blend);
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}

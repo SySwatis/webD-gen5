@@ -9846,6 +9846,9 @@ input.form-control {
   border-radius: 1.125rem;
   height: calc(1.5em + 0.75rem + 6px);
 }
+textarea.form-control {
+  border-radius: 1.125rem;
+}
 .ibox-content {
   border-radius: 1.125rem;
 }
@@ -9856,6 +9859,9 @@ input.form-control {
   background-color: #f36506;
   color: #fff;
   border: none;
+}
+.ibox-title-orange .close {
+  color: #fff;
 }
 .ibox-title-test {
   padding-right: 120px;
@@ -9916,8 +9922,12 @@ input.form-control {
 .ibox-background-brown .ibox-content {
   background-color: #39363a;
 }
+.ibox-background-brown .ibox-content .btn-white {
+  color: #333333 !important;
+}
 .ibox-background-orange .btn.btn-xs,
-.ibox-background-brown .btn.btn-xs {
+.ibox-background-orange .btn {
+  background-color: white;
   color: #333333 !important;
 }
 .ibox-background-orange .ibox-content,
@@ -9927,10 +9937,6 @@ input.form-control {
 .ibox-background-orange .ibox-content a,
 .ibox-background-brown .ibox-content a {
   color: #fff;
-}
-.ibox-background-orange .ibox-content .btn,
-.ibox-background-brown .ibox-content .btn {
-  background-color: white;
 }
 .ibox-background-orange .ibox-content .fa,
 .ibox-background-brown .ibox-content .fa,
@@ -10097,6 +10103,14 @@ h2 > span {
   }
   .ibox-title-test {
     padding-right: 280px;
+  }
+  .ibox-tools .btn-trash {
+    margin-top: -0.5em;
+    margin-right: -0.5em;
+  }
+  .ibox-tools .btn-trash .fa {
+    font-size: 1.5rem;
+    color: #f36506;
   }
   body.nav-hidden .navbar-static-top,
   body.nav-hidden .navbar-static-side {

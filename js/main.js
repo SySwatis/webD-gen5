@@ -2,7 +2,7 @@
 
   // Config
 
-  defaultContent = 'mon-espace';
+  defaultContent = 'mes-documents';
 
   // Hide sideBar on Desktop
 
@@ -36,6 +36,14 @@
       }
     });
   }
+
+  // Modal
+
+  $('.navbar-top-links .fa.fa-envelope').on('click',function(e){
+    e.preventDefault();
+    console.log('contactModal');
+    $('#contactModal').modal('show');
+  });
 
   // Demo
 

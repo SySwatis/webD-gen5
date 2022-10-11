@@ -62,19 +62,19 @@
                         </div> -->
 
                         <div class="logo-element">
-                            <img src="img/logo-g5-white-simple-99x.png" height="48px"
-                            width="48px" alt="Generation 5">
+                            <img src="img/logo-g5-white-simple-99x.png" height="48px" width="48px" alt="Generation 5">
                         </div>
                     </li>
-                    
+
                     <li>
                         <a href="#Mon-espace" data-content="mon-espace"><i class="fa fa-home"></i> <span
                                 class="nav-label">Mon espace</span></a>
                     </li>
                     <li>
-                        <a href="#Mon-parcours" data-content="parcours"><i class="fa fa-line-chart"></i> <span class="nav-label">Mon
+                        <a href="#Mon-parcours" data-content="parcours"><i class="fa fa-line-chart"></i> <span
+                                class="nav-label">Mon
                                 Parcours</span> </a>
-                                
+
                     </li>
                     <!-- <li>
                         <a href="_#"><i class="fa fa-th-large"></i> <span class="nav-label">Mes Parcours</span> <span class="fa arrow"></span></a>
@@ -88,13 +88,17 @@
                         </ul>
                     </li> -->
                     <li>
-                        <a href="_#"><i class="fa fa-pencil"></i> <span class="nav-label">Evaluation</span> <span class="fa arrow"></span></a>
+                        <a href="_#"><i class="fa fa-pencil"></i> <span class="nav-label">Evaluation</span> <span
+                                class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
-                        <li class="active"><a href="#SoftSkills" data-content="softskills"><i class="fa fa-tachometer"></i><span class="nav-label"></span>SoftSkills</span></a></li>
+                            <li class="active"><a href="#SoftSkills" data-content="softskills"><i
+                                        class="fa fa-tachometer"></i><span
+                                        class="nav-label"></span>SoftSkills</span></a></li>
                         </ul>
                     </li>
                     <li>
-                        <a href="_#"><i class="fa fa-folder-open-o"></i> <span class="nav-label">Documents</span><span class="label-circle animated shake">2</span></a>
+                        <a href="#mesDocuments" data-content="mes-documents"><i class="fa fa-folder-open-o"></i> <span class="nav-label">Mes documents</span><span
+                                class="label-circle animated shake">2</span></a>
                     </li>
                     <li>
                         <a href="_#"><i class="fa fa-retweet"></i> <span class="nav-label">
@@ -105,7 +109,8 @@
                                 Agenda</span><span class="label-circle animated shake">1</span></a>
                     </li>
                     <li>
-                        <a href="#Actualites" data-content="actualites"><i class="fa fa-newspaper-o"></i> <span class="nav-label">
+                        <a href="#Actualites" data-content="actualites"><i class="fa fa-newspaper-o"></i> <span
+                                class="nav-label">
                                 Actualités</span> </a>
                     </li>
                     <li>
@@ -125,20 +130,20 @@
                                 Soft Skills</span> </a>
                     </li>
                 </ul>
-                
+
             </div>
         </nav>
 
         <div id="page-wrapper">
 
             <div class="row">
-                
+
                 <nav class="navbar navbar-static-top" role="navigation"
                     style="margin-bottom: 0; background-color: transparent;">
                     <div class="navbar-header">
                         <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i
                                 class="fa fa-bars"></i> </a>
-                                
+
                         <!-- <form role="search" class="navbar-form-custom" method="post" action="#">
                             <div class="form-group">
                                 <input type="text" placeholder="Rechercher ..." class="form-control" name="top-search"
@@ -149,8 +154,11 @@
                     <ul class="nav navbar-top-links navbar-right">
                         <li>
                             <div id="prevBox" class="prev-box">
-                                <button type="button" data-content="parcours" class="btn btn-primary btn-prev-small"> 
-                                    <i class="fa fa-arrow-left mr-lg-2"></i><span class="d-none d-lg-inline-block mr-2">Revenir à</span><span class="d-none d-lg-inline-block"><b>Mon Parcours</b><span class="fa fa-line-chart pl-2 pr-1"></span></span>
+                                <button type="button" data-content="parcours" class="btn btn-primary btn-prev-small">
+                                    <i class="fa fa-arrow-left mr-lg-2"></i><span
+                                        class="d-none d-lg-inline-block mr-2">Revenir à</span><span
+                                        class="d-none d-lg-inline-block"><b>Mon Parcours</b><span
+                                            class="fa fa-line-chart pl-2 pr-1"></span></span>
                                 </button>
                             </div>
                         </li>
@@ -166,7 +174,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="login.html"  title="Se deconnecter">
+                            <a href="login.html" title="Se deconnecter">
                                 <i class="fa fa-sign-out"></i>
                             </a>
                         </li>
@@ -177,7 +185,7 @@
 
 
             <div class="wrapper wrapper-content animated fadeInRight">
-                
+
                 <section id="features" class="container">
                     <!-- ajaxContent -->
                 </section>
@@ -195,6 +203,51 @@
         </div>
     </div>
 
+    <!-- modal -->
+
+
+    <div class="modal fade" id="contactModal" tabindex="-1" role="dialog" aria-labelledby="contactModal"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+
+            <div class="ibox ibox-background-brown">
+                <div class="ibox-title ibox-title-orange">
+                    <h2>Contactez <span>Moi</span></h3>
+                        <div class="ibox-tools clearfix">
+                            <div class="profile-image">
+                                <img alt="image" class="rounded-circle  m-b-md" src="img/profile_small-123x.jpg">
+                            </div>
+                            <button type="button" class="close" data-dismiss="modal">
+                                <span
+                                    aria-hidden="true">×</span><span class="sr-only">Close</span>
+                                </button>
+                        </div>
+                </div>
+                <div class="ibox-content">
+                    <div class="form-container p-3">
+                        <form id="mail" name="mail">
+                            <p class="mt-3">Pour prendre contact avec ce conseiller, utilisez ce formulaire</p>
+                            <input type="hidden" id="uti_num" name="uti_num" value="958">
+                            <input type="text" id="sujet" name="sujet" class="form-control" placeholder="Sujet">
+                            <br>
+                            <textarea class="form-control" id="body" name="body"
+                                placeholder="Mon message ici..." rows="6"></textarea>
+
+                            <div class="pt-5 pb-2 text-lg-right">
+                                <button type="button" class="btn btn-white mr-3" data-dismiss="modal">Annuler</button>
+                                <button type="button" class="btn btn-primary" data-dismiss="modal"
+                                    onclick="xajax_envoie_mail_conseiller(xajax.getFormValues('mail'))">Envoyer <i
+                                        class="fa fa-arrow-right"></i></button>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
     <!-- Mainly scripts -->
     <script src="js/jquery-3.1.1.min.js"></script>
     <script src="js/popper.min.js"></script>
@@ -206,18 +259,18 @@
     <script src="js/inspinia.js"></script>
     <script src="js/plugins/pace/pace.min.js"></script>
 
-    
+
     <!-- slick carousel-->
     <script src="js/plugins/slick/slick.min.js"></script>
 
-<script>
-    
-</script>
+    <script>
+
+    </script>
     <!-- Custom Ingeneria 5.0 - Syswatis -->
     <script src="js/main.js"></script>
     <script src="js/plugins/circle-progress/jquery.circle-progress.min.js"></script>
 
-    
+
 
 
 </body>
