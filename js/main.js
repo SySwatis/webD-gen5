@@ -2,7 +2,7 @@
 
   // Config
 
-  defaultContent = 'mes-documents';
+  defaultContent = 'mon-agenda';
 
   // Hide sideBar on Desktop
 

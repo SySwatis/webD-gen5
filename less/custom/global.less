@@ -24,12 +24,37 @@ a {
   > a:first-child {
     position: fixed;
     z-index: 10;
-    margin:20px;
+    margin: 20px;
   }
 }
 
-.nav-second-level li:last-child {
-  padding: 0 4px;
+.navbar-default {
+  ul.nav {
+    > li a {
+      // font-size: 15px;
+    }
+  }
+}
+
+.nav-second-level {
+  li {
+    .fa {
+      text-align: left;
+    }
+    &.active {
+      a {
+        font-weight: 400;
+      }
+    }
+    a {
+      padding-left: 32px;
+
+      // font-weight: 400;
+      // text-align: right;
+    }
+  }
+  li:last-child {
+  }
 }
 
 a {
@@ -41,7 +66,7 @@ a {
 }
 
 .prev-box {
-  margin:15px 15px 0 15px;
+  margin: 15px 15px 0 15px;
 }
 
 // Button rounded
@@ -79,7 +104,6 @@ textarea.form-control {
 // Ibox rounded
 
 .ibox {
-
   &-content {
     border-radius: @btn-border-radius;
     .fa {
@@ -159,7 +183,6 @@ textarea.form-control {
   &-background-orange {
     .ibox-content {
       background-color: @orange;
-      
     }
   }
 
@@ -172,19 +195,20 @@ textarea.form-control {
     }
   }
   &-background-orange {
-    .btn.btn-xs, .btn {
+    .btn.btn-xs,
+    .btn {
       background-color: white;
       color: @text-color !important;
     }
   }
-  &-background-orange, 
+  &-background-orange,
   &-background-brown {
     .ibox-content {
       border: none;
       a {
         color: #fff;
       }
-     
+
       .fa,
       p,
       .text-muted,
@@ -385,7 +409,7 @@ h2 > span {
       padding: 0;
     }
     &-title-test {
-      padding-right: 280px;
+      padding-right: 300px;
     }
     &-tools {
       .btn-trash {
@@ -418,7 +442,6 @@ h2 > span {
   // Reduce size
 
   .navbar-sticky {
-
     .row.mt-lg-4 {
       margin-top: 0 !important;
     }
@@ -484,7 +507,7 @@ h2 > span {
     p a {
       font-weight: 600;
     }
-    
+
     &-content {
       line-height: 1.7rem !important;
       img + p {
@@ -497,19 +520,67 @@ h2 > span {
   }
 }
 
-@media only screen and (min-width: 992px) {
+/* Agenda, time line */
 
+.dark-timeline {
+  .vertical-timeline-content {
+    h2 {
+      font-weight: 600;
+    }
+    border-radius: @btn-border-radius;
+    .vertical-date {
+      font-size: 18px;
+      font-weight: 600;
+    }
+  }
+
+
+}
+
+.center-orientation
+.vertical-timeline-block
+.vertical-timeline-content
+.vertical-date {
+  float: none;
+text-align: center;
+margin: 0 auto;
+
+}
+.vertical-date {
+  background-color: #fff;
+padding: 1em;
+display: block;
+border-radius: 12px;
+}
+
+@media only screen and (min-width: 992px) {
   .navbar-sticky .progress-ing5 {
     &::after {
-        font-size: 13px;
-        margin-top: -25px;
-        margin-left: 10px;
+      font-size: 13px;
+      margin-top: -25px;
+      margin-left: 10px;
     }
     .circle-progress {
-    width: 90px;}
+      width: 90px;
+    }
+  }
 }
+@media only screen and (min-width: 1170px) {
+  /* agenda */
+  .center-orientation
+  .vertical-timeline-block
+  .vertical-timeline-content
+  .vertical-date {
+  text-align: left;
 }
+  .center-orientation
+    .vertical-timeline-block:nth-child(2n)
+    .vertical-timeline-content
+    .vertical-date {
+    text-align: right;
+  }
 
+}
 @media only screen and (max-width: 767px) {
   .btn.btn-prev-small {
     width: 100%;

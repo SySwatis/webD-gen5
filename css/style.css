@@ -9811,8 +9811,14 @@ a {
   z-index: 10;
   margin: 20px;
 }
-.nav-second-level li:last-child {
-  padding: 0 4px;
+.nav-second-level li .fa {
+  text-align: left;
+}
+.nav-second-level li.active a {
+  font-weight: 400;
+}
+.nav-second-level li a {
+  padding-left: 32px;
 }
 a {
   color: #39363a;
@@ -10102,7 +10108,7 @@ h2 > span {
     padding: 0;
   }
   .ibox-title-test {
-    padding-right: 280px;
+    padding-right: 300px;
   }
   .ibox-tools .btn-trash {
     margin-top: -0.5em;
@@ -10183,6 +10189,28 @@ h2 > span {
 .blog .ibox-content p {
   font-size: 15px;
 }
+/* Agenda, time line */
+.dark-timeline .vertical-timeline-content {
+  border-radius: 1.125rem;
+}
+.dark-timeline .vertical-timeline-content h2 {
+  font-weight: 600;
+}
+.dark-timeline .vertical-timeline-content .vertical-date {
+  font-size: 18px;
+  font-weight: 600;
+}
+.center-orientation .vertical-timeline-block .vertical-timeline-content .vertical-date {
+  float: none;
+  text-align: center;
+  margin: 0 auto;
+}
+.vertical-date {
+  background-color: #fff;
+  padding: 1em;
+  display: block;
+  border-radius: 12px;
+}
 @media only screen and (min-width: 992px) {
   .navbar-sticky .progress-ing5::after {
     font-size: 13px;
@@ -10191,6 +10219,15 @@ h2 > span {
   }
   .navbar-sticky .progress-ing5 .circle-progress {
     width: 90px;
+  }
+}
+@media only screen and (min-width: 1170px) {
+  /* agenda */
+  .center-orientation .vertical-timeline-block .vertical-timeline-content .vertical-date {
+    text-align: left;
+  }
+  .center-orientation .vertical-timeline-block:nth-child(2n) .vertical-timeline-content .vertical-date {
+    text-align: right;
   }
 }
 @media only screen and (max-width: 767px) {
@@ -10443,13 +10480,14 @@ h2 > span {
   float: left;
   background-color: #fff;
   color: #f36506;
-  width: 24px;
-  height: 24px;
-  border-radius: 12px;
+  width: 32px;
+  height: 32px;
+  border-radius: 16px;
   text-align: center;
   line-height: 24px;
   font-size: 16px;
   margin: 0 10px 0 0;
+  padding: 4px;
 }
 .title-test.active.last + .ibox-tools {
   display: none;
@@ -10474,7 +10512,7 @@ h2 > span {
 @media only screen and (min-width: 768px) {
   .ibox-title .title-test > span:first-child,
   .ibox-title .title-test span.number {
-    margin: 4px 10px 0 0;
+    margin-right: 10px;
   }
   .ibox .ibox-title h3.title-test > span + span {
     font-size: 1.8em;

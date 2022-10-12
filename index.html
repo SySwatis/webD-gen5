@@ -67,8 +67,16 @@
                     </li>
 
                     <li>
-                        <a href="#Mon-espace" data-content="mon-espace"><i class="fa fa-home"></i> <span
-                                class="nav-label">Mon espace</span></a>
+                        <a href="_#"><i class="fa fa-user"></i> <span class="nav-label">Mon espace</span> <span
+                                class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li class="active"><a href="#tableauDeBord" data-content="tabeau-de-bord"><i
+                                        class="fa fa-tasks"></i><span class="nav-label"></span>Tableau de
+                                    Bord</span></a></li>
+                            <li class="active"><a href="#monAgenda" data-content="mon-agenda"><i
+                                        class="fa fa-calendar"></i><span class="nav-label"></span>Mon
+                                    agenda</span></a></li>
+                        </ul>
                     </li>
                     <li>
                         <a href="#Mon-parcours" data-content="parcours"><i class="fa fa-line-chart"></i> <span
@@ -97,7 +105,8 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="#mesDocuments" data-content="mes-documents"><i class="fa fa-folder-open-o"></i> <span class="nav-label">Mes documents</span><span
+                        <a href="#mesDocuments" data-content="mes-documents"><i class="fa fa-folder-open-o"></i> <span
+                                class="nav-label">Mes documents</span><span
                                 class="label-circle animated shake">2</span></a>
                     </li>
                     <li>
@@ -105,8 +114,9 @@
                                 Recommencer</span> </a>
                     </li>
                     <li>
-                        <a href="_#"><i class="fa fa-calendar"></i> <span class="nav-label">
-                                Agenda</span><span class="label-circle animated shake">1</span></a>
+                        <a href="#monAgenda" data-content="mon-agenda"><i class="fa fa-calendar"></i> <span
+                                class="nav-label">
+                                Mon Agenda</span><span class="label-circle animated shake">1</span></a>
                     </li>
                     <li>
                         <a href="#Actualites" data-content="actualites"><i class="fa fa-newspaper-o"></i> <span
@@ -218,9 +228,8 @@
                                 <img alt="image" class="rounded-circle  m-b-md" src="img/profile_small-123x.jpg">
                             </div>
                             <button type="button" class="close" data-dismiss="modal">
-                                <span
-                                    aria-hidden="true">×</span><span class="sr-only">Close</span>
-                                </button>
+                                <span aria-hidden="true">×</span><span class="sr-only">Close</span>
+                            </button>
                         </div>
                 </div>
                 <div class="ibox-content">
@@ -230,8 +239,8 @@
                             <input type="hidden" id="uti_num" name="uti_num" value="958">
                             <input type="text" id="sujet" name="sujet" class="form-control" placeholder="Sujet">
                             <br>
-                            <textarea class="form-control" id="body" name="body"
-                                placeholder="Mon message ici..." rows="6"></textarea>
+                            <textarea class="form-control" id="body" name="body" placeholder="Mon message ici..."
+                                rows="6"></textarea>
 
                             <div class="pt-5 pb-2 text-lg-right">
                                 <button type="button" class="btn btn-white mr-3" data-dismiss="modal">Annuler</button>
