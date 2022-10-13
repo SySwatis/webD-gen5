@@ -76,6 +76,11 @@
                             <li class="active"><a href="#monAgenda" data-content="mon-agenda"><i
                                         class="fa fa-calendar"></i><span class="nav-label"></span>Mon
                                     agenda</span></a></li>
+                                    <li>
+                                        <a href="#mesDocuments" data-content="mes-documents"><i class="fa fa-folder-open-o"></i> <span
+                                                class="nav-label">Mes documents</span><span
+                                                class="label-circle animated shake">2</span></a>
+                                    </li>
                         </ul>
                     </li>
                     <li>
@@ -104,11 +109,7 @@
                                         class="nav-label"></span>SoftSkills</span></a></li>
                         </ul>
                     </li>
-                    <li>
-                        <a href="#mesDocuments" data-content="mes-documents"><i class="fa fa-folder-open-o"></i> <span
-                                class="nav-label">Mes documents</span><span
-                                class="label-circle animated shake">2</span></a>
-                    </li>
+              
                     <li>
                         <a href="_#"><i class="fa fa-retweet"></i> <span class="nav-label">
                                 Recommencer</span> </a>
@@ -213,7 +214,7 @@
         </div>
     </div>
 
-    <!-- modal -->
+    <!-- Contact modal -->
 
 
     <div class="modal fade" id="contactModal" tabindex="-1" role="dialog" aria-labelledby="contactModal"
@@ -246,6 +247,50 @@
                                 <button type="button" class="btn btn-white mr-3" data-dismiss="modal">Annuler</button>
                                 <button type="button" class="btn btn-primary" data-dismiss="modal"
                                     onclick="xajax_envoie_mail_conseiller(xajax.getFormValues('mail'))">Envoyer <i
+                                        class="fa fa-arrow-right"></i></button>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+     <!-- Admin modal -->
+
+    <div class="modal fade" id="adminModal" tabindex="-1" role="dialog" aria-labelledby="adminModal"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+
+            <div class="ibox">
+                <div class="ibox-title ibox-title-orange">
+                    <h2>Gestion <span>Privée</span></h3>
+                        <div class="ibox-tools clearfix">
+                            <div class="profile-image">
+                                <img alt="image" class="rounded-circle  m-b-md" src="img/profile_small-123x.jpg">
+                            </div>
+                            <button type="button" class="close" data-dismiss="modal">
+                                <span aria-hidden="true"><i class="fa fa-close"></i></span><span class="sr-only">Close</span>
+                            </button>
+                        </div>
+                </div>
+                <div class="ibox-content">
+                    <div class="form-container p-3">
+                        <form id="mail" name="mail">
+                            <p class="mt-3">Ici les champs utiles à la gestion privée des données</p>
+                            <input type="hidden" id="uti_num" name="uti_num" value="958">
+                            <p><input type="text" id="field_1" name="field_1" class="form-control" placeholder="Champ 1"></p>
+                            <p></p><input type="text" id="field_2" name="field_2" class="form-control" placeholder="Champ 2"></p>
+                            
+                            <textarea class="form-control" id="field_3" name="field_3" placeholder="Champ 3"
+                                rows="6"></textarea>
+
+                            <div class="pt-5 pb-2 text-lg-right">
+                                <button type="button" class="btn btn-primary mr-3" data-dismiss="modal">Annuler</button>
+                                <button type="button" class="btn btn-success" data-dismiss="modal"
+                                    onclick="">Valider <i
                                         class="fa fa-arrow-right"></i></button>
                             </div>
 

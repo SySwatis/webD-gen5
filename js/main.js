@@ -2,7 +2,7 @@
 
   // Config
 
-  defaultContent = 'mon-agenda';
+  defaultContent = 'actualites';
 
   // Hide sideBar on Desktop
 
