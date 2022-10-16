@@ -1,13 +1,7 @@
 {
-	"folders": [
-		{
-			"path": ".."
-		},
-		{
-			"path": "../../../estephane.com"
-		}
-	],
-	"settings": {
-		"liveServer.settings.multiRootWorkspaceName": "HTML5_Seed_Project"
-	}
+    "folders": [
+        {
+            "path": "../js"
+        }
+    ]
 }

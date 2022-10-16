@@ -2,7 +2,14 @@
 
   // Config
 
-  defaultContent = 'actualites';
+  defaultContent = "tableau-de-bord";
+
+  // Init
+
+  activeEl = $("nav.navbar-default").find(
+    "a[data-content=" + defaultContent + "]"
+  );
+  activeEl.closest("li").addClass("active");
 
   // Hide sideBar on Desktop
 
@@ -37,12 +44,37 @@
     });
   }
 
+  // SwipeLeft (mobile)
+
+  closeSideBar = function() {
+    $("body").toggleClass("mini-navbar");
+    SmoothlyMenu();
+  }
+  $( ".navbar-default" ).on( "swipeleft", closeSideBar );
+
+  // toTop
+
+  $(window).scroll(function () {
+    if ($(this).scrollTop()) {
+      $("#toTop").fadeIn();
+    } else {
+      $("#toTop").fadeOut();
+    }
+  });
+
+  $("#toTop").click(function () {
+    //1 second of animation time
+    //html works for FFX but not Chrome
+    //body works for Chrome but not FFX
+    //This strange selector seems to work universally
+    $("html, body").animate({ scrollTop: 0 }, 1000);
+  });
+
   // Modal
 
-  $('.navbar-top-links .fa.fa-envelope').on('click',function(e){
+  $("a.modal").on("click", function (e) {
     e.preventDefault();
-    console.log('contactModal');
-    $('#contactModal').modal('show');
+    $($(this).attr('href')).modal("show");
   });
 
   // Demo
@@ -51,16 +83,22 @@
 
   var ajaxRequestHtml = function (content) {
     page = content;
+    // alert(window.location.pathname);
     $.ajax({
       url: "html/" + content + ".html?" + Date.now(),
       dataType: "html",
       success: function (response) {
-        // restart pace loader spinner
+
+        // Restart pace loader spinner
+
         Pace.restart();
+
+        // Respons HTML
 
         $("#features").html(response);
 
-        //
+        // Progress Circle
+
         if ($(".progress-ing5").length) {
           $(".progress-ing5").circleProgress({
             max: 100,
@@ -73,7 +111,7 @@
 
         // Imgage Background
 
-        $(".img-wrapper").attr("class","img-wrapper");
+        $(".img-wrapper").attr("class", "img-wrapper");
         $(".img-wrapper img").addClass("hidden");
         if ($("#features > .row").first().data("background")) {
           bgEl = $("#features > .row").first().data("background");
@@ -84,23 +122,33 @@
           $(".img-wrapper img.default").removeClass("hidden");
         }
 
-        sessionStorage.setItem("content", content);
-        document.title = "Ingeneria 5.0 | " + content;
+        // add Class page content
 
-        if (content !== "login") {
-          $("body").removeClass("nav-hidden");
-        } else {
-          $("body").addClass("nav-hidden");
-        }
+        $("body[class*='page']").removeClass(function (index, css) {
+          return (css.match(/(^|\s)page\S+/g) || []).join(" ");
+        });
+
+        $("body").addClass('page-'+content);
+
+        // sessionStorage.setItem("content", content);
+
+        // var pathname = window.location.pathname; // Returns path only (/path/example.html)
+        // var url = window.location.href; // Returns full URL (https://example.com/path/example.html)
+        // var origin = window.location.origin; // Returns base URL (https://example.com)
+        // Current URL: https://my-website.com/page_a
+        const nextURL = window.location.origin + "/index.html#" + content;
+        const nextTitle = content;
+        const nextState = { additionalInformation: "Updated the URL with JS" };
+
+        // This will create a new entry in the browser's history, without reloading
+        window.history.pushState(nextState, nextTitle, nextURL);
+
+        // This will replace the current entry in the browser's history, without reloading
+        window.history.replaceState(nextState, nextTitle, nextURL);
 
         // reInit
 
-        $("nav a, button")
-          .not(".navbar-minimalize")
-          .not($('a[href="_#"]'))
-          .off();
-
-        navAjax();
+        navAjax(content);
 
         console.log("ajax done " + content);
 
@@ -118,6 +166,7 @@
               draggable: false,
               infinite: false,
               swipe: false,
+              focusOnChange:true
             })
             .init(function (event, slick) {
               // $(".progress-ing5").circleProgress({
@@ -130,7 +179,6 @@
 
               // Debug
               // slickTestContainer.slick("slickGoTo",47);
-
               // Unset function xajax_ for the demo
               xajax_valide_test = function () {
                 return;
@@ -139,6 +187,13 @@
                 return;
               };
 
+              // Btn PrevBox prevent history
+
+              $('#btnPrevBox').on('click',function(){
+                var goTo = -1 + (slickTestContainer.slick("slickCurrentSlide")*-1);
+                history.go(goTo);
+              });
+     
               // Init Count
               testIni = "_1";
               countArray = $("#title-test" + testIni).data("count");
@@ -174,7 +229,7 @@
                     // $(".progress-ing5").circleProgress({
                     //   value: circleProgressVal,
                     // });
-                    $('.progress-bar').css('width',barProgressVal+'%');
+                    $(".progress-bar").css("width", barProgressVal + "%");
                     slickTestContainer.slick("slickNext");
                     // Add to count
                     if (
@@ -234,7 +289,7 @@
                     //   value: newCircleProgressVal,
                     // });
                     newbarProgressVal = (nBtnTestValid / nBtnTest) * 100;
-                    $('.progress-bar').css('width',newbarProgressVal+'%');
+                    $(".progress-bar").css("width", newbarProgressVal + "%");
                   }
 
                   if ($(this).hasClass("btn-prev")) {
@@ -284,6 +339,14 @@
                     $(".count").text(newCountArray[1]);
                     $(".total").text(newCountArray[2]);
                   }
+
+                  $("html, body").animate(
+                    {
+                      scrollTop: $(".stats").offset().top + -60,
+                    },
+                    0
+                  );
+
                 });
             });
         }
@@ -316,34 +379,53 @@
             );
           }
 
-          $("#features").addClass('container');
-          
+          $("#features").addClass("container");
+
           if ($(this).data("action") == "expand") {
-            $(this).find("i").toggleClass("fa-expand").toggleClass("fa-compress");
+            $(this)
+              .find("i")
+              .toggleClass("fa-expand")
+              .toggleClass("fa-compress");
             // Toggle Modal
-            if($('#classRoom').hasClass('modal')) {
-              $('#classRoom').removeClass('modal').modal('hide').show();
+            if ($("#classRoom").hasClass("modal")) {
+              $("#classRoom").removeClass("modal").modal("hide").show();
             } else {
-              $('#classRoom').addClass('modal').modal('show');
+              $("#classRoom").addClass("modal").modal("show");
             }
-       
           }
         });
       },
       error: function () {
         ajaxRequestHtml("404");
-        sessionStorage.removeItem("home");
+        // sessionStorage.removeItem("home");
       },
     });
   };
 
-  navAjax = function () {
-    $("nav.navbar-default a, button").on("click", function (e) {
+  // History back
+
+  window.addEventListener(
+    "hashchange",
+    () => {
+      console.log("The hash has changed!");
+      if (window.location.hash) {
+        newContent = window.location.hash.substring(1);
+        ajaxRequestHtml(newContent);
+      }
+    },
+    false
+  );
+
+  navAjax = function (content) {
+    // Reinit on click with "off"
+    $("nav a, button").not(".navbar-minimalize").not($('a[href="_#"]')).not(".modal").off();
+
+    $("a, button").not('.modal').on("click", function (e) {
       // Stop propagation
-      if ($(this).attr("href") == "_#") {
+
+      if (!$(this).data("content")) {
         e.preventDefault();
       }
-
       // Not parent submenu
       if (!$(this).find(".fa.arrow").length) {
         e.preventDefault();
@@ -357,22 +439,20 @@
         }
       }
 
+      // Inject data content
       if ($(this).data("content")) {
         e.preventDefault();
-        $(window).scrollTop(0);
         ajaxRequestHtml($(this).data("content"));
       }
+
+      $(window).scrollTop(0);
     });
   };
 
-  navAjax();
+  // navAjax();
 
   // Start default content
   ajaxRequestHtml(defaultContent);
-
-  // $('.nav-header').on('click',function(){
-  //     $('.img-wrapper').toggleClass('duotone');
-  // });
 
   // Demo countDown (init in html part)
   // http://www.finalclap.com/faq/194-javascript-compte-rebours-countdown-html

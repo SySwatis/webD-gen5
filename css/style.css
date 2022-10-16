@@ -9827,7 +9827,25 @@ a {
   display: none;
 }
 .prev-box {
-  margin: 15px 15px 0 15px;
+  position: fixed;
+  right: 0;
+  top: 0px;
+  margin: 90px 20px 20px;
+  z-index: 5;
+}
+.btn.navbar-minimalize,
+.prev-box .btn {
+  box-shadow: 0 0 3px rgba(15, 12, 12, 0.45);
+}
+.to-top {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  margin-right: 32px;
+  margin-bottom: 64px;
+}
+.to-top .fa {
+  color: #f36506;
 }
 button:not(.btn-outline-secondary),
 a:not(.btn-outline-secondary) {
@@ -9855,6 +9873,23 @@ input.form-control {
 textarea.form-control {
   border-radius: 1.125rem;
 }
+.ibox-tools .profile-image {
+  width: 75px !important;
+  height: 75px !important;
+  margin-right: 0.5em;
+}
+.ibox-tools .profile-image img {
+  width: 75px !important;
+  height: 75px !important;
+}
+.ibox-tools .btn-trash {
+  margin-top: -0.5em;
+  margin-right: -0.5em;
+}
+.ibox-tools .btn-trash .fa {
+  font-size: 1.5rem;
+  color: #f36506;
+}
 .ibox-content {
   border-radius: 1.125rem;
 }
@@ -9871,6 +9906,9 @@ textarea.form-control {
 }
 .ibox-title-test {
   padding-right: 120px;
+}
+.ibox-title-gray {
+  background-color: #f3f3f4;
 }
 .ibox .border-bottom-orange {
   border-top: none;
@@ -9975,6 +10013,9 @@ textarea.form-control {
   background-color: transparent;
   padding: 0;
 }
+.alert {
+  border-radius: 1.125rem;
+}
 .label-circle {
   border-radius: 15px;
   padding: 5px;
@@ -9988,23 +10029,50 @@ textarea.form-control {
   right: 0;
   top: 0;
   color: #fff;
-  margin-right: 9px;
   background-color: #1a7bb9;
 }
-.navbar-top-links .label-circle {
-  margin-right: -12px;
+.navbar-top-links li > a,
+.navbar-default li > a {
+  position: relative;
 }
-h1 > span,
-h2 > span {
+.navbar-top-links li > a > .label-circle,
+.navbar-default li > a > .label-circle {
+  margin-top: -8px;
+}
+.navbar-default li > a {
+  position: relative;
+}
+.navbar-default li > a > .label-circle {
+  margin-right: 8px;
+}
+.navbar-top-links li > a > .label-circle {
+  margin-right: -12px;
+  margin-top: -8px;
+}
+.heading {
+  text-transform: uppercase;
+}
+h2 {
+  text-transform: uppercase;
+}
+h2 .fa {
+  font-size: 0.9em;
+  display: inline-block;
+  top: -2px;
+  position: relative;
+  margin-right: 2px;
+}
+.ibox .ibox-content h1,
+.ibox .ibox-content h2,
+.ibox .ibox-content h3 {
+  font-weight: 400;
+  text-transform: initial;
+}
+.ibox .ibox-content h1 > span,
+.ibox .ibox-content h2 > span,
+.ibox .ibox-content h3 > span {
   font-weight: 900;
   font-size: 1.2em;
-}
-.ibox .ibox-title h3 {
-  font-weight: 400;
-}
-.ibox .ibox-title h3 > span {
-  font-weight: 900;
-  font-size: 1.4em;
 }
 /* Background */
 .bg-nav {
@@ -10030,7 +10098,7 @@ h2 > span {
   text-align: center;
 }
 .navbar-top-links {
-  margin-right: 20px;
+  margin-right: 16px;
 }
 .navbar-top-links.nav > li {
   text-align: center;
@@ -10038,7 +10106,7 @@ h2 > span {
 .navbar-top-links.nav > li.active {
   background-color: transparent !important;
 }
-.navbar-top-links.nav > li a {
+.navbar-top-links.nav > li > a {
   margin-left: 4px;
   margin-right: 4px;
   margin-top: 14px;
@@ -10048,22 +10116,22 @@ h2 > span {
   line-height: 28px;
   padding: 4px 10px;
 }
-.navbar-top-links.nav > li a > i::before {
+.navbar-top-links.nav > li > a > i::before {
   font-size: 1.2em;
   line-height: 1.2;
   vertical-align: middle;
 }
-.navbar-top-links.nav > li a,
-.navbar-top-links.nav > li a:focus {
+.navbar-top-links.nav > li > a,
+.navbar-top-links.nav > li > :focus {
   background-color: #fff !important;
   color: #39363a;
 }
-.navbar-top-links.nav > li a i,
-.navbar-top-links.nav > li a:focus i {
+.navbar-top-links.nav > li > a i,
+.navbar-top-links.nav > li > :focus i {
   margin: 0;
 }
-.navbar-top-links.nav > li a:hover,
-.navbar-top-links.nav > li a:focus:hover {
+.navbar-top-links.nav > li > a:hover,
+.navbar-top-links.nav > li > :focus:hover {
   background-color: #f36506 !important;
   color: #fff;
 }
@@ -10078,14 +10146,11 @@ h2 > span {
   display: inline-block;
   margin: 0px 2px 0 2px;
 }
-.mini-navbar .sidebar-collapse .logo {
-  display: none;
-}
 .loginscreen .logo img {
   max-width: 100%;
 }
 @media only screen and (min-width: 768px) {
-  .navbar-top-links.nav > li a {
+  .navbar-top-links.nav > li > a {
     margin-left: 4px;
     margin-right: 4px;
     margin-top: 14px;
@@ -10095,10 +10160,10 @@ h2 > span {
     line-height: 32px;
     padding: 6px 12px;
   }
-  .navbar-top-links.nav > li a > i.fa-sign-out {
+  .navbar-top-links.nav > li > a > i.fa-sign-out {
     margin-left: 2px;
   }
-  .navbar-top-links.nav > li a > i:before {
+  .navbar-top-links.nav > li > a > i:before {
     font-size: 1.5em;
     line-height: 1.5;
   }
@@ -10109,14 +10174,6 @@ h2 > span {
   }
   .ibox-title-test {
     padding-right: 300px;
-  }
-  .ibox-tools .btn-trash {
-    margin-top: -0.5em;
-    margin-right: -0.5em;
-  }
-  .ibox-tools .btn-trash .fa {
-    font-size: 1.5rem;
-    color: #f36506;
   }
   body.nav-hidden .navbar-static-top,
   body.nav-hidden .navbar-static-side {
@@ -10129,10 +10186,7 @@ h2 > span {
   .navbar-sticky .row.mt-lg-4 {
     margin-top: 0 !important;
   }
-  .navbar-sticky .prev-box {
-    margin: 0 0 1em !important;
-  }
-  .navbar-sticky .prev-box h3 {
+  .navbar-sticky .row:first-of-type .col-lg-5 h2 {
     display: none;
   }
   .navbar-sticky .ibox-sticky-hidden {
@@ -10197,7 +10251,13 @@ h2 > span {
   font-weight: 600;
 }
 .dark-timeline .vertical-timeline-content .vertical-date {
-  font-size: 18px;
+  font-size: 22px;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: #333333;
+}
+.dark-timeline .vertical-timeline-content .vertical-date small {
+  font-size: 22px;
   font-weight: 600;
 }
 .center-orientation .vertical-timeline-block .vertical-timeline-content .vertical-date {
@@ -10212,6 +10272,9 @@ h2 > span {
   border-radius: 12px;
 }
 @media only screen and (min-width: 992px) {
+  .prev-box {
+    margin-top: 150px;
+  }
   .navbar-sticky .progress-ing5::after {
     font-size: 13px;
     margin-top: -25px;
@@ -10231,9 +10294,38 @@ h2 > span {
   }
 }
 @media only screen and (max-width: 767px) {
+  .ibox-content,
+  .alert {
+    padding: 15px;
+  }
+  .ibox-content .ibox-content,
+  .alert .ibox-content {
+    border-radius: 0.5rem;
+  }
+  .canvas-menu.mini-navbar .nav-second-level li a,
+  .fixed-sidebar.mini-navbar .nav-second-level li a {
+    padding: 7px 10px 7px 30px;
+  }
   .btn.btn-prev-small {
-    width: 100%;
+    width: 36px;
     display: block;
+  }
+  /* agenda */
+  #vertical-timeline::before {
+    left: 50%;
+    margin-left: -2px;
+  }
+  .vertical-timeline-content {
+    margin-left: 0;
+  }
+  .vertical-timeline-block {
+    margin-bottom: 3.6em;
+  }
+  .vertical-timeline-icon {
+    z-index: 2 !important;
+    border: none;
+    margin-left: -12px;
+    margin-top: -12px;
   }
 }
 /* Duotone */
@@ -10307,22 +10399,16 @@ h2 > span {
   height: auto;
 }
 .circle-progress-value {
-  stroke-width: 8px;
+  stroke-width: 9px;
   stroke: #1a7bb9;
 }
 .circle-progress-circle {
   stroke: #ffffff;
   stroke-width: 8px;
+  fill: rgba(255, 255, 255, 0 0.15);
+}
+.ibox-progress-circle-white.ibox-progress-circle-white-60 {
   fill: rgba(255, 255, 255, 0.6);
-}
-.ibox-progress-circle-white .circle-progress-circle {
-  stroke: rgba(255, 255, 255, 0.3);
-  stroke-width: 8px;
-  fill: transparent;
-}
-.ibox-progress-circle-white .circle-progress-value {
-  stroke-width: 8px;
-  stroke: #fff;
 }
 .ibox-progress-circle-white .progress-ing5::after {
   color: #fff;
@@ -10330,28 +10416,20 @@ h2 > span {
 .ibox-progress-circle-white .progress-ing5 .circle-progress-text {
   fill: #fff;
 }
-.ibox-progress-circle-yellow .circle-progress-circle {
-  stroke: #ffffff;
-  stroke-width: 8px;
-  fill: transparent;
-}
 .ibox-progress-circle-yellow .circle-progress-value {
-  stroke-width: 8px;
   stroke: #f8ac59;
 }
 .ibox-progress-circle-yellow .progress-ing5::after {
-  color: #FFF;
+  color: #f8ac59;
 }
 .ibox-progress-circle-yellow .progress-ing5 .circle-progress-text {
-  fill: #FFF;
+  fill: #f8ac59;
 }
 .ibox-progress-circle-blue .circle-progress-circle {
   stroke: #ffffff;
   stroke-width: 8px;
-  fill: transparent;
 }
 .ibox-progress-circle-blue .circle-progress-value {
-  stroke-width: 8px;
   stroke: #1a7bb9;
 }
 .ibox-progress-circle-blue .progress-ing5::after {

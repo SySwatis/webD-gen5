@@ -48,7 +48,6 @@ a {
     }
     a {
       padding-left: 32px;
-
       // font-weight: 400;
       // text-align: right;
     }
@@ -66,7 +65,27 @@ a {
 }
 
 .prev-box {
-  margin: 15px 15px 0 15px;
+  position: fixed;
+  right: 0;
+  top: 0px;
+  margin: 90px 20px 20px;
+  z-index: 5;
+}
+
+.btn.navbar-minimalize,
+.prev-box .btn {
+  box-shadow: 0 0 3px rgba(15, 12, 12, 0.45);
+}
+
+.to-top {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  margin-right: 32px;
+  margin-bottom: 64px;
+  .fa {
+    color: @orange;
+  }
 }
 
 // Button rounded
@@ -101,9 +120,30 @@ input.form-control {
 textarea.form-control {
   border-radius: @btn-border-radius;
 }
+
 // Ibox rounded
 
 .ibox {
+  &-tools {
+    .profile-image {
+      width: 75px !important;
+      height: 75px !important;
+      margin-right: 0.5em;
+      img {
+        width: 75px !important;
+        height: 75px !important;
+      }
+    }
+    .btn-trash {
+      margin-top: -0.5em;
+      margin-right: -0.5em;
+      .fa {
+        font-size: 1.5rem;
+        color: @orange;
+      }
+    }
+  }
+
   &-content {
     border-radius: @btn-border-radius;
     .fa {
@@ -122,6 +162,10 @@ textarea.form-control {
 
   &-title-test {
     padding-right: 120px;
+  }
+
+  &-title-gray {
+    background-color: @gray;
   }
 
   .border-bottom-orange {
@@ -233,6 +277,12 @@ textarea.form-control {
   padding: 0;
 }
 
+// Alert rounded
+
+.alert {
+  border-radius: @btn-border-radius;
+}
+
 // Expand
 
 // Label notifications
@@ -250,28 +300,62 @@ textarea.form-control {
   right: 0;
   top: 0;
   color: #fff;
-  margin-right: 9px;
   background-color: @blue;
 }
 
+.navbar-top-links,
+.navbar-default {
+  li > a {
+    position: relative;
+    > .label-circle {
+      margin-top: -8px;
+    }
+  }
+}
+.navbar-default {
+  li > a {
+    position: relative;
+    > .label-circle {
+      margin-right: 8px;
+    }
+  }
+}
 .navbar-top-links {
-  .label-circle {
-    margin-right: -12px;
+  li > a {
+    > .label-circle {
+      margin-right: -12px;
+      margin-top: -8px;
+    }
   }
 }
 
-// Title and bolder
+// Titles and bolder
 
-h1 > span,
-h2 > span {
-  font-weight: 900;
-  font-size: 1.2em;
+.heading {
+  text-transform: uppercase;
 }
-.ibox .ibox-title h3 {
-  font-weight: 400;
-  > span {
-    font-weight: 900;
-    font-size: 1.4em;
+
+h2 {
+  text-transform: uppercase;
+  .fa {
+    font-size: 0.9em;
+    display: inline-block;
+    top: -2px;
+    position: relative;
+    margin-right: 2px;
+  }
+}
+
+.ibox .ibox-content {
+  h1,
+  h2,
+  h3 {
+    font-weight: 400;
+    text-transform: initial;
+    > span {
+      font-weight: 900;
+      font-size: 1.2em;
+    }
   }
 }
 
@@ -311,13 +395,13 @@ h2 > span {
 // User Menu
 
 .navbar-top-links {
-  margin-right: 20px;
+  margin-right: 16px;
   &.nav > li {
     text-align: center;
     &.active {
       background-color: transparent !important;
     }
-    a {
+    > a {
       margin-left: 4px;
       margin-right: 4px;
       margin-top: 14px;
@@ -332,8 +416,8 @@ h2 > span {
         vertical-align: middle;
       }
     }
-    a,
-    a:focus {
+    > a,
+    > :focus {
       background-color: #fff !important;
       color: @brown;
       i {
@@ -365,7 +449,6 @@ h2 > span {
 
 .mini-navbar {
   .sidebar-collapse .logo {
-    display: none;
   }
 }
 
@@ -380,7 +463,7 @@ h2 > span {
 
   .navbar-top-links {
     &.nav > li {
-      a {
+      > a {
         margin-left: 4px;
         margin-right: 4px;
         margin-top: 14px;
@@ -411,16 +494,6 @@ h2 > span {
     &-title-test {
       padding-right: 300px;
     }
-    &-tools {
-      .btn-trash {
-        margin-top: -0.5em;
-        margin-right: -0.5em;
-        .fa {
-          font-size: 1.5rem;
-          color: @orange;
-        }
-      }
-    }
   }
 
   // Login
@@ -445,10 +518,11 @@ h2 > span {
     .row.mt-lg-4 {
       margin-top: 0 !important;
     }
-    .prev-box {
-      margin: 0 0 1em !important;
-      h3 {
-        display: none;
+    .row:first-of-type {
+      .col-lg-5 {
+        h2 {
+          display: none;
+        }
       }
     }
     .ibox {
@@ -458,6 +532,7 @@ h2 > span {
         padding: 0;
         overflow: hidden;
       }
+
       &.border-top-orange {
         margin-bottom: 1em;
         .ibox-content {
@@ -529,31 +604,37 @@ h2 > span {
     }
     border-radius: @btn-border-radius;
     .vertical-date {
-      font-size: 18px;
-      font-weight: 600;
+      font-size: 22px;
+      font-weight: 500;
+      text-transform: uppercase;
+      color: @text-color;
+      small {
+        font-size: 22px;
+        font-weight: 600;
+      }
     }
   }
-
-
 }
 
 .center-orientation
-.vertical-timeline-block
-.vertical-timeline-content
-.vertical-date {
+  .vertical-timeline-block
+  .vertical-timeline-content
+  .vertical-date {
   float: none;
-text-align: center;
-margin: 0 auto;
-
+  text-align: center;
+  margin: 0 auto;
 }
 .vertical-date {
   background-color: #fff;
-padding: 1em;
-display: block;
-border-radius: 12px;
+  padding: 1em;
+  display: block;
+  border-radius: 12px;
 }
 
 @media only screen and (min-width: 992px) {
+  .prev-box {
+    margin-top: 150px;
+  }
   .navbar-sticky .progress-ing5 {
     &::after {
       font-size: 13px;
@@ -568,22 +649,54 @@ border-radius: 12px;
 @media only screen and (min-width: 1170px) {
   /* agenda */
   .center-orientation
-  .vertical-timeline-block
-  .vertical-timeline-content
-  .vertical-date {
-  text-align: left;
-}
+    .vertical-timeline-block
+    .vertical-timeline-content
+    .vertical-date {
+    text-align: left;
+  }
   .center-orientation
     .vertical-timeline-block:nth-child(2n)
     .vertical-timeline-content
     .vertical-date {
     text-align: right;
   }
-
 }
 @media only screen and (max-width: 767px) {
+
+  .ibox-content, .alert {
+    padding:15px;
+    .ibox-content {
+      border-radius: 0.5rem;
+    }
+  }
+
+  .canvas-menu.mini-navbar .nav-second-level li a,
+  .fixed-sidebar.mini-navbar .nav-second-level li a {
+    padding: 7px 10px 7px 30px;
+  }
   .btn.btn-prev-small {
-    width: 100%;
+    width: 36px;
     display: block;
+  }
+  /* agenda */
+
+  #vertical-timeline::before {
+    left: 50%;
+    margin-left: -2px;
+  }
+
+  .vertical-timeline {
+    &-content {
+      margin-left: 0;
+    }
+    &-block {
+      margin-bottom: 3.6em;
+    }
+    &-icon {
+      z-index: 2 !important;
+      border: none;
+      margin-left: -12px;
+      margin-top: -12px;
+    }
   }
 }

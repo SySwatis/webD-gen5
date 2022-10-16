@@ -11,6 +11,10 @@
     margin-left: 15px;
     color: @blue;
   }
+  .circle-progress-text {
+   
+    
+  }
 }
 .circle-progress {
   z-index: 1;
@@ -19,23 +23,17 @@
 }
 
 .circle-progress-value {
-  stroke-width: 8px;
+  stroke-width: 9px;
   stroke: @blue;
 }
 .circle-progress-circle {
   stroke: rgba(255, 255, 255, 1);
   stroke-width: 8px;
-  fill: rgba(255, 255, 255, 0.6);
+  fill: rgba(255, 255, 255, 0.0.15);
 }
 .ibox-progress-circle-white {
-  .circle-progress-circle {
-    stroke: rgba(255, 255, 255, 0.3);
-    stroke-width: 8px;
-    fill: transparent;
-  }
-  .circle-progress-value {
-    stroke-width: 8px;
-    stroke: #fff;
+  &.ibox-progress-circle-white-60 {
+    fill: rgba(255, 255, 255, 0.60);
   }
   .progress-ing5 {
     &::after {
@@ -48,21 +46,15 @@
 }
 
 .ibox-progress-circle-yellow {
-  .circle-progress-circle {
-    stroke: rgba(255, 255, 255, 1);
-    stroke-width: 8px;
-    fill: transparent;
-  }
   .circle-progress-value {
-    stroke-width: 8px;
     stroke: @yellow;
   }
   .progress-ing5 {
     &::after {
-      color: #FFF;
+      color: @yellow;
     }
     .circle-progress-text {
-      fill: #FFF;
+      fill:  @yellow;
     }
   }
 }
@@ -71,10 +63,10 @@
     .circle-progress-circle {
         stroke: rgba(255, 255, 255, 1);
       stroke-width: 8px;
-      fill: transparent;
+
     }
     .circle-progress-value {
-      stroke-width: 8px;
+ 
       stroke: @blue;
     }
     .progress-ing5 {

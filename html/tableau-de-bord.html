@@ -1,16 +1,10 @@
 <div class="row align-items-center" data-background="">
 
     <div class="col-lg-5 animated fadeInRight">
-        
-        <h2 class="text-center pb-3">
-           <i class="fa fa-user"></i> Mon <span>Espace</span>
-        </h2>
-        
         <div class="ibox border-top-orange">
             <div class="text-center bg-nav text-white ibox-content">
-                <span class="fa fa-tasks fa-3x p-3"></span>
+                <span class="fa fa-compass fa-3x p-3"></span>
                 <h1>Tableau de <span>Bord</span></h1>
-                
             </div>
         </div>
         <div class="ibox mb-0 ibox-sticky-hidden">
@@ -23,8 +17,23 @@
        
     </div>
 
-    <div class="col-lg-4">
+    <div class="col-lg-1">
         <!-- empty -->
+    </div>
+
+    <div class="col-lg-3 text-center">
+        <div class="ibox ibox-progress-circle ibox-progress-circle-yellow float-lg-right">
+            <div class="ibox-content ibox-content-transparent text-center">
+                <div class="heading p-2">
+                    <i class="fa fa-pencil pl-2 pr-1"></i>
+                    <h3>Mon <span>Évaluation</span></h3>
+                    <p class="small">Total progression</p>
+                </div>
+                <div class="progress-ing5"></div>
+                <!-- <button data-content="softskills" type="button" class="btn btn-primary btn-success mt-3">Poursuivre <i
+                    class="fa fa-arrow-right"></i></button> -->
+            </div>
+        </div>
     </div>
 
     <div class="col-lg-3 text-center">
@@ -37,7 +46,7 @@
                         <p class="small">Total progression</p>
                     </div>
                     <div class="progress-ing5"></div>
-                    <button data-content="atelier-1" type="button" class="btn btn-primary btn-success mt-3">Poursuivre <i
+                    <button data-content="mon-parcours" type="button" class="btn btn-primary btn-success mt-3">Poursuivre <i
                         class="fa fa-arrow-right"></i></button>
                 </div>
             </div>
@@ -46,36 +55,37 @@
 </div>
 
 <div class="row align-items-center mt-lg-4">
-    <div class="col-sm-5 text-center">
+    <div class="col-lg-5 text-center">
         <div class="ibox ibox-background-orange">
             <div class="ibox-content text-center">
                 <i class="fa fa-2x fa-bell-o float-right"></i>
                 <h2 class="p-3 ml-4 mb-0">Important</h2>
                 <p class="small mb-0">6 Notifications</p>
                 <p>Vous avez des éléments à consulter</p>
-                <i class="fa fa-3x fa-arrow-right pl-2"></i>
+                <i class="d-none d-lg-inline-block fa fa-3x fa-arrow-right pl-2"></i>
+                <i class="d-lg-none d-sm-inline-block fa fa-2x fa-arrow-down pb-2"></i>
             </div>
         </div>
     </div>
 
-    <div class="col-sm-2 text-center m-t-lg">
-        <div class="ibox">
+    <div class="col-sm-4 col-lg-2 text-center">
+        <div class="ibox mt-lg-4">
             <div class="ibox-content">
                 <i class="fa fa fa-calendar-o fa-2x p-2"><span class="label-circle animated shake">3</span></i>
                 <p class="small mb-0">Agenda</p>
             </div>
         </div>
     </div>
-    <div class="col-sm-2 text-center">
+    <div class="col-sm-4 col-lg-2 text-center">
         <div class="ibox">
             <div class="ibox-content">
                 <i class="fa fa fa-newspaper-o fa-2x p-2"><span class="label-circle animated shake">1</span></i>
-                <p class="small mb-0 ">Actualités</p>
+                <p class="small mb-0 "><a href="#actualies" data-content="actualites">Actualités</a></p>
             </div>
         </div>
     </div>
-    <div class="col-sm-2 text-center">
-        <div class="ibox m-t-lg">
+    <div class="col-sm-4 col-lg-2 text-center">
+        <div class="ibox mt-lg-4">
             <div class="ibox-content">
                 <i class="fa fa-folder-open-o fa-2x p-2"><span class="label-circle animated shake">2</span></i>
                 <p class="small mb-0 ">Mes documents</p>

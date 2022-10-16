@@ -27,12 +27,15 @@
 </script>
 
 <body class="gray-bg">
+    
 
     <!-- https://cssduotone.com/ -->
     <!-- HTML Markup -->
 
     <!-- You should think of `img-wrapper` as the image itself. This element is what you should target for sizing/styling. -->
     <div class="img-wrapper">
+       
+
         <!-- The `::before` pseudo-element will apear here in the Broweser(DOM) and in web-inspector. -->
         <img class="parcours-background bien-commencer-background atelier-1-background hidden"
             src="css/patterns/backgroud-style-brown-fablab-g-5.jpg" alt="Bienvenue">
@@ -41,6 +44,9 @@
     </div>
 
     <div class="wrapper wrapper-content animated fadeInRight">
+        <div class="alert alert-success alert-dismissable animated fadeInDown mr-2 ml-2">
+            <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>En poursuivant la navigation, vous acceptez les cookies <a class="alert-link" data-toggle="modal" data-target="#myModal2" href="#">Plus d'infos</a>.
+        </div>
         <section class="container">
             <div class="row login align-items-center m-t-lg">
                 <div class="col-lg-5 text-center loginscreen animated fadeInDown">
