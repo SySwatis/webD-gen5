@@ -1,7 +1,7 @@
 (function ($) {
   // Config
 
-  var defaultContent = "tableau-de-bord";
+  var defaultContent = "actualites";
   var historyBack = false;
 
   // Flip cart

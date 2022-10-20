@@ -249,24 +249,7 @@ textarea.form-control {
   &-background-brown {
     .ibox-content {
       border: none;
-      a {
-        color: #fff;
-      }
-
-      .fa,
-      p,
-      .text-muted,
-      div,
-      h1,
-      h2,
-      h3,
-      h4,
-      h5,
-      span,
-      ul,
-      li {
-        color: #fff !important;
-      }
+     
     }
   }
 }
@@ -496,7 +479,13 @@ h2 {
     }
   }
 
-  // Login
+  // Ibox Modal
+
+  .modal .ibox-content {
+    pointer-events:auto;
+  }
+
+  // Ibox Login
 
   body.nav-hidden {
     .navbar-static-top,

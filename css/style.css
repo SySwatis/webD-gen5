@@ -9974,36 +9974,6 @@ textarea.form-control {
 .ibox-background-brown .ibox-content {
   border: none;
 }
-.ibox-background-orange .ibox-content a,
-.ibox-background-brown .ibox-content a {
-  color: #fff;
-}
-.ibox-background-orange .ibox-content .fa,
-.ibox-background-brown .ibox-content .fa,
-.ibox-background-orange .ibox-content p,
-.ibox-background-brown .ibox-content p,
-.ibox-background-orange .ibox-content .text-muted,
-.ibox-background-brown .ibox-content .text-muted,
-.ibox-background-orange .ibox-content div,
-.ibox-background-brown .ibox-content div,
-.ibox-background-orange .ibox-content h1,
-.ibox-background-brown .ibox-content h1,
-.ibox-background-orange .ibox-content h2,
-.ibox-background-brown .ibox-content h2,
-.ibox-background-orange .ibox-content h3,
-.ibox-background-brown .ibox-content h3,
-.ibox-background-orange .ibox-content h4,
-.ibox-background-brown .ibox-content h4,
-.ibox-background-orange .ibox-content h5,
-.ibox-background-brown .ibox-content h5,
-.ibox-background-orange .ibox-content span,
-.ibox-background-brown .ibox-content span,
-.ibox-background-orange .ibox-content ul,
-.ibox-background-brown .ibox-content ul,
-.ibox-background-orange .ibox-content li,
-.ibox-background-brown .ibox-content li {
-  color: #fff !important;
-}
 .ibox-content-transparent {
   border: none;
   background-color: transparent;
@@ -10170,6 +10140,9 @@ h2 .fa {
   }
   .ibox-title-test {
     padding-right: 300px;
+  }
+  .modal .ibox-content {
+    pointer-events: auto;
   }
   body.nav-hidden .navbar-static-top,
   body.nav-hidden .navbar-static-side {
