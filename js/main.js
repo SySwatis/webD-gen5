@@ -1,8 +1,59 @@
 (function ($) {
-
   // Config
 
-  defaultContent = "tableau-de-bord";
+  var defaultContent = "tableau-de-bord";
+  var historyBack = false;
+
+  // Flip cart
+
+  var preventScroll = function (el) {
+    $("html, body").animate(
+      {
+        scrollTop: $(el).offset().top + -60,
+      },
+      0
+    );
+  };
+  var cardFamily = function () {
+    $(document).ready(function () {
+      console.log("cardFamily");
+      $cardFamily = $("#cardFamily");
+
+      // Card inner
+      $cardFamilyCarousel = $(".card-slick-carousel");
+      $cardFamilyCarousel.slick({
+        dots: true,
+        arrows: false,
+      });
+
+      $(".item-card-family .recto").on("click", function (e) {
+        e.preventDefault();
+        $(this).addClass("hidden");
+        $(this)
+          .closest(".item-card-family")
+          .find(".verso")
+          .removeClass("hidden")
+          .addClass("flipInY animated");
+
+        $cardFamilyCarousel.slick("unslick");
+
+        $cardFamilyCarousel.slick({
+          dots: true,
+          arrows: false,
+        });
+      });
+      $(".item-card-family .verso .btn").on("click", function (e) {
+        e.preventDefault();
+
+        $(this).closest(".item-card-family").find(".verso").addClass("hidden");
+        $(this)
+          .closest(".item-card-family")
+          .find(".recto")
+          .removeClass("hidden")
+          .addClass("flipInYx animated");
+      });
+    });
+  };
 
   // Init
 
@@ -46,11 +97,11 @@
 
   // SwipeLeft (mobile)
 
-  closeSideBar = function() {
+  closeSideBar = function () {
     $("body").toggleClass("mini-navbar");
     SmoothlyMenu();
-  }
-  $( ".navbar-default" ).on( "swipeleft", closeSideBar );
+  };
+  $(".navbar-default").on("swipeleft", closeSideBar);
 
   // toTop
 
@@ -74,7 +125,7 @@
 
   $("a.modal").on("click", function (e) {
     e.preventDefault();
-    $($(this).attr('href')).modal("show");
+    $($(this).attr("href")).modal("show");
   });
 
   // Demo
@@ -88,8 +139,9 @@
       url: "html/" + content + ".html?" + Date.now(),
       dataType: "html",
       success: function (response) {
-
         // Restart pace loader spinner
+
+        new cardFamily();
 
         Pace.restart();
 
@@ -128,23 +180,29 @@
           return (css.match(/(^|\s)page\S+/g) || []).join(" ");
         });
 
-        $("body").addClass('page-'+content);
+        $("body").addClass("page-" + content);
 
-        // sessionStorage.setItem("content", content);
+        if (historyBack==true) {
+          // sessionStorage.setItem("content", content);
 
-        // var pathname = window.location.pathname; // Returns path only (/path/example.html)
-        // var url = window.location.href; // Returns full URL (https://example.com/path/example.html)
-        // var origin = window.location.origin; // Returns base URL (https://example.com)
-        // Current URL: https://my-website.com/page_a
-        const nextURL = window.location.origin + "/index.html#" + content;
-        const nextTitle = content;
-        const nextState = { additionalInformation: "Updated the URL with JS" };
+          // var pathname = window.location.pathname; // Returns path only (/path/example.html)
+          // var url = window.location.href; // Returns full URL (https://example.com/path/example.html)
+          // var origin = window.location.origin; // Returns base URL (https://example.com)
+          // Current URL: https://my-website.com/page_a
+          const nextURL = window.location.origin + "/index.html#" + content;
+          const nextTitle = content;
+          const nextState = {
+            additionalInformation: "Updated the URL with JS",
+          }
 
-        // This will create a new entry in the browser's history, without reloading
-        window.history.pushState(nextState, nextTitle, nextURL);
+          // This will create a new entry in the browser's history, without reloading
+          window.history.pushState(nextState, nextTitle, nextURL);
 
-        // This will replace the current entry in the browser's history, without reloading
-        window.history.replaceState(nextState, nextTitle, nextURL);
+          // This will replace the current entry in the browser's history, without reloading
+          window.history.replaceState(nextState, nextTitle, nextURL);
+        } else {
+          $("#prevBox").addClass("hidden");
+        }
 
         // reInit
 
@@ -166,7 +224,7 @@
               draggable: false,
               infinite: false,
               swipe: false,
-              focusOnChange:true
+              focusOnChange: true,
             })
             .init(function (event, slick) {
               // $(".progress-ing5").circleProgress({
@@ -189,11 +247,12 @@
 
               // Btn PrevBox prevent history
 
-              $('#btnPrevBox').on('click',function(){
-                var goTo = -1 + (slickTestContainer.slick("slickCurrentSlide")*-1);
+              $("#btnPrevBox").on("click", function () {
+                var goTo =
+                  -1 + slickTestContainer.slick("slickCurrentSlide") * -1;
                 history.go(goTo);
               });
-     
+
               // Init Count
               testIni = "_1";
               countArray = $("#title-test" + testIni).data("count");
@@ -346,7 +405,6 @@
                     },
                     0
                   );
-
                 });
             });
         }
@@ -418,35 +476,41 @@
 
   navAjax = function (content) {
     // Reinit on click with "off"
-    $("nav a, button").not(".navbar-minimalize").not($('a[href="_#"]')).not(".modal").off();
+    $("nav a, button")
+      .not(".navbar-minimalize")
+      .not($('a[href="_#"]'))
+      .not(".modal")
+      .off();
 
-    $("a, button").not('.modal').on("click", function (e) {
-      // Stop propagation
+    $("a, button")
+      .not(".modal")
+      .on("click", function (e) {
+        // Stop propagation
 
-      if (!$(this).data("content")) {
-        e.preventDefault();
-      }
-      // Not parent submenu
-      if (!$(this).find(".fa.arrow").length) {
-        e.preventDefault();
-        if ($(this).closest("li").length) {
-          $("nav li").not($(this).closest("li")).removeClass("active");
-          $(this).closest("li").addClass("active");
-          if ($("body.mini-navbar").length) {
-            $("body").removeClass("mini-navbar");
-            SmoothlyMenu();
+        if (!$(this).data("content")) {
+          e.preventDefault();
+        }
+        // Not parent submenu
+        if (!$(this).find(".fa.arrow").length) {
+          e.preventDefault();
+          if ($(this).closest("li").length) {
+            $("nav li").not($(this).closest("li")).removeClass("active");
+            $(this).closest("li").addClass("active");
+            if ($("body.mini-navbar").length) {
+              $("body").removeClass("mini-navbar");
+              SmoothlyMenu();
+            }
           }
         }
-      }
 
-      // Inject data content
-      if ($(this).data("content")) {
-        e.preventDefault();
-        ajaxRequestHtml($(this).data("content"));
-      }
+        // Inject data content
+        if ($(this).data("content")) {
+          e.preventDefault();
+          ajaxRequestHtml($(this).data("content"));
+        }
 
-      $(window).scrollTop(0);
-    });
+        $(window).scrollTop(0);
+      });
   };
 
   // navAjax();

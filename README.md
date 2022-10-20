@@ -23,3 +23,11 @@ tabs atelier mobile (labels)
 - jQuery mobile swipeleft (debug)
 - php template
 - blog items nth, brown, oranges
+
+# Ressources
+
+- History Back
+
+https://www.30secondsofcode.org/articles/s/javascript-modify-url-without-reload
+
+https://askcodez.com/windows-history-back-location-reload-jquery.html
