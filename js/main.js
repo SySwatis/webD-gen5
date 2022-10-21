@@ -1,7 +1,7 @@
 (function ($) {
   // Config
 
-  var defaultContent = "actualites";
+  var defaultContent = "acceler-emploi";
   var historyBack = false;
 
   // Flip cart

@@ -9962,14 +9962,6 @@ textarea.form-control {
 .ibox-background-brown .ibox-content {
   background-color: #39363a;
 }
-.ibox-background-brown .ibox-content .btn-white {
-  color: #333333 !important;
-}
-.ibox-background-orange .btn.btn-xs,
-.ibox-background-orange .btn {
-  background-color: white;
-  color: #333333 !important;
-}
 .ibox-background-orange .ibox-content,
 .ibox-background-brown .ibox-content {
   border: none;
