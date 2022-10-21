@@ -3,8 +3,7 @@
     <div class="col-lg-5 animated fadeInRight">
         <div class="ibox ibox-background-brown ibox-sticky-hidden">
             <div class="ibox-content">
-                <p class="mb-0 text-white">Ce test vous permettra de mieux vous connaître testez-vous ! <b>Durée 3
-            mn</b>.</p></div>
+                <p class="mb-0 text-white"><b>Félicitation</b>, vous avez terminé ! Voici les résultats.</p></div>
         </div>
         <div class="ibox border-top-orange">
             <div class="text-center bg-nav text-white ibox-content">
@@ -48,14 +47,21 @@
     <div class="col-lg-12">
         <div class="ibox ">
             <div class="ibox-title ibox-title-orange">
-                <h3 class="title-test result"><span><small>Fin</small></span><span> Résultat du test</span></h3>
+                <h3 class="title-test result"><span>Fin</span><span> Résultat du test</span></h3>
             </div>
-            <div class="ibox-content">
-                <div>
+            <div class="ibox-content text-center">
+               
+                <div class="m-b-lg">
+                    <h3 class="mt-4 mb-4">A) Radar <span>Area</span></h3>
                     <canvas id="radarChart"></canvas>
+                </div>
+                <div class="m-b-lg">
+                    <h3 class="mt-4 mb-4">B) Polar <span>Area</span></h3>
+                    <canvas id="polarChart" height="140"></canvas>
                 </div>
             </div>
         </div>
+
     </div>
 </div>
 <script src="js/demo/chartjs-demo.js"></script>

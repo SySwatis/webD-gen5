@@ -56,39 +56,39 @@ $(function () {
     // var ctx2 = document.getElementById("barChart").getContext("2d");
     // new Chart(ctx2, {type: 'bar', data: barData, options:barOptions});
 
-    // var polarData = {
-    //     datasets: [{
-    //         data: [
-    //             300,140,200
-    //         ],
-    //         backgroundColor: [
-    //             "#a3e1d4", "#dedede", "#b5b8cf"
-    //         ],
-    //         label: [
-    //             "My Radar chart"
-    //         ]
-    //     }],
-    //     labels: [
-    //         "App","Software","Laptop"
-    //     ]
-    // };
+    var polarData = {
+        datasets: [{
+            data: [
+                300,140,200
+            ],
+            backgroundColor: [
+                "#a3e1d4", "#dedede", "#b5b8cf"
+            ],
+            label: [
+                "My Radar chart"
+            ]
+        }],
+        labels: [
+            "App","Software","Laptop"
+        ]
+    };
 
-    // var polarOptions = {
-    //     segmentStrokeWidth: 2,
-    //     responsive: true
+    var polarOptions = {
+        segmentStrokeWidth: 2,
+        responsive: true
 
-    // };
+    };
 
-    // var ctx3 = document.getElementById("polarChart").getContext("2d");
-    // new Chart(ctx3, {type: 'polarArea', data: polarData, options:polarOptions});
+    var ctx3 = document.getElementById("polarChart").getContext("2d");
+    new Chart(ctx3, {type: 'polarArea', data: polarData, options:polarOptions});
 
-    // var doughnutData = {
-    //     labels: ["App","Software","Laptop" ],
-    //     datasets: [{
-    //         data: [300,50,100],
-    //         backgroundColor: ["#a3e1d4","#dedede","#b5b8cf"]
-    //     }]
-    // } ;
+    var doughnutData = {
+        labels: ["App","Software","Laptop" ],
+        datasets: [{
+            data: [300,50,100],
+            backgroundColor: ["#a3e1d4","#dedede","#b5b8cf"]
+        }]
+    } ;
 
 
     // var doughnutOptions = {
