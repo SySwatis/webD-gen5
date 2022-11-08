@@ -1,0 +1,56 @@
+/* riasec-grah */
+
+.riasec-graph {
+    position: relative;
+    width: 100%;
+    max-width: 480px;
+    img {
+        width: 100%;
+        max-width: 480px;
+        height: auto;
+    }
+    margin: 0 auto;
+    .letter {
+        position: absolute;
+        color: white;
+        z-index: 1;
+        left: 50%;
+        top:50%;
+        font-weight: 600;
+        font-size: 4.5vw;
+        display: block;
+        &-r{
+           top:10%;
+           margin-left:-3%;
+        }
+        &-i{
+          
+            top:24%;
+            margin-left:23%;
+        }
+        &-a{
+            top:60%;
+            margin-left:21%;    
+        }
+        &-c{
+            top:24%;
+            margin-left:-28%;
+            color: @text-color;
+        }
+        &-s{
+            top:75%;
+            margin-left:-3%;
+        }
+        &-e{
+            top:60%;
+            margin-left:-27%;    
+        }
+    }
+     
+}
+
+@media only screen and (min-width: 768px) {
+.riasec-graph .letter {
+    font-size: 48px;
+}
+}

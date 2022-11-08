@@ -9997,15 +9997,19 @@ textarea.form-control {
 .navbar-default li > a > .label-circle {
   margin-top: -8px;
 }
-.navbar-default li > a {
-  position: relative;
-}
+.navbar-top-links li > a > .label-circle,
 .navbar-default li > a > .label-circle {
   margin-right: 8px;
+}
+.navbar-default li > a {
+  position: relative;
 }
 .navbar-top-links li > a > .label-circle {
   margin-right: -12px;
   margin-top: -8px;
+}
+.nav-second-level li:last-child {
+  padding-bottom: 0;
 }
 .heading {
   text-transform: uppercase;
@@ -10538,8 +10542,8 @@ h2 .fa {
 .slick-soft-skills.slick-slider {
   margin-bottom: 0;
 }
-.slick-box-test .row:not(.row-result) > div:first-of-type,
-.slick-soft-skills .row:not(.row-result) > div:first-of-type {
+.slick-box-test .row:not(.row-result) > div.text-lg-right,
+.slick-soft-skills .row:not(.row-result) > div.text-lg-right {
   font-size: 1.1em;
   font-style: italic;
   margin-top: 1em;
@@ -10562,14 +10566,14 @@ h2 .fa {
     margin-top: 2em;
     margin-bottom: 0;
   }
-  .slick-box-test .slick-track > div.row:not(.row-result) div:first-of-type,
-  .slick-soft-skills .slick-track > div.row:not(.row-result) div:first-of-type {
+  .slick-box-test .slick-track > div.row:not(.row-result) > div.col-lg-4.text-lg-right,
+  .slick-soft-skills .slick-track > div.row:not(.row-result) > div.col-lg-4.text-lg-right {
     font-size: 1.25em;
     padding-right: 2em;
     padding-left: 1.5em;
     border-bottom: none;
     padding-bottom: 0;
-    margin: 0;
+    margin: 0 0 2em;
     border-right: 1px solid #D1DADE;
   }
 }
@@ -10713,6 +10717,58 @@ h2 .fa {
   backface-visibility: visible !important;
   -webkit-animation-name: flipInYx;
   animation-name: flipInYx;
+}
+/* riasec-grah */
+.riasec-graph {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+}
+.riasec-graph img {
+  width: 100%;
+  max-width: 480px;
+  height: auto;
+}
+.riasec-graph .letter {
+  position: absolute;
+  color: white;
+  z-index: 1;
+  left: 50%;
+  top: 50%;
+  font-weight: 600;
+  font-size: 4.5vw;
+  display: block;
+}
+.riasec-graph .letter-r {
+  top: 10%;
+  margin-left: -3%;
+}
+.riasec-graph .letter-i {
+  top: 24%;
+  margin-left: 23%;
+}
+.riasec-graph .letter-a {
+  top: 60%;
+  margin-left: 21%;
+}
+.riasec-graph .letter-c {
+  top: 24%;
+  margin-left: -28%;
+  color: #333333;
+}
+.riasec-graph .letter-s {
+  top: 75%;
+  margin-left: -3%;
+}
+.riasec-graph .letter-e {
+  top: 60%;
+  margin-left: -27%;
+}
+@media only screen and (min-width: 768px) {
+  .riasec-graph .letter {
+    font-size: 48px;
+  }
 }
 @media print {
   nav.navbar-static-side {
