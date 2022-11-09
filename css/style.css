@@ -10039,6 +10039,10 @@ h2 .fa {
   font-weight: 900;
   font-size: 1.2em;
 }
+/* text color addons */
+.text-green {
+  color: #065b06;
+}
 /* Background */
 .bg-nav {
   background-color: #39363a;
