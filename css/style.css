@@ -10602,6 +10602,9 @@ h2 .fa {
   border-radius: 12px;
   /* slick */
 }
+.item-card-family .item-card img {
+  max-width: 100%;
+}
 .item-card-family .item-card .slick-dots li button::before {
   color: white;
   font-size: 20px;
@@ -10612,6 +10615,11 @@ h2 .fa {
   right: 0;
   left: 0;
   bottom: 0;
+}
+.item-card-family .item-card.recto:not(.hidden) {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .item-card-family .item-card .btn.btn-undo {
   position: absolute;

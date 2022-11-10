@@ -1,7 +1,7 @@
 (function ($) {
   // Config
 
-  var defaultContent = "resultat";
+  var defaultContent = "cartes";
   var historyBack = false;
 
   // Flip cart
