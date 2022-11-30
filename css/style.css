@@ -10638,12 +10638,20 @@ h2 .fa {
 }
 .page-cartes .recto .image-card {
   position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 0;
+  padding-bottom: 100%;
+  margin-bottom: 1.5em;
 }
 .page-cartes .recto .image-card img {
-  position: relative;
+  position: absolute;
   z-index: 1;
+  left: 0;
+  top: 0;
+  right: 0;
 }
-.page-cartes .recto .image-card::after {
+.page-cartes .softskills .recto .image-card::after {
   top: 50%;
   margin-top: -50%;
   left: 0;
@@ -10655,14 +10663,19 @@ h2 .fa {
   border-radius: 50%;
   display: block;
 }
-.page-cartes .cat-1 .recto .image-card::after {
+.page-cartes .softskills.cat-0 .recto .image-card::after {
+  background-color: #adadad;
+}
+.page-cartes .softskills.cat-1 .recto .image-card::after {
+  background-color: #0070c0;
+  opacity: 0.6;
+}
+.page-cartes .softskills.cat-2 .recto .image-card::after {
   background-color: #157039;
+  opacity: 0.6;
 }
-.page-cartes .cat-2 .recto .image-card::after {
+.page-cartes .softskills.cat-3 .recto .image-card::after {
   background-color: #701515;
-}
-.page-cartes .cat-3 .recto .image-card::after {
-  background-color: #70156b;
 }
 @media screen and (min-width: 540px) {
   .item-card-family {

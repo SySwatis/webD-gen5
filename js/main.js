@@ -136,7 +136,7 @@
     page = content;
     // alert(window.location.pathname);
     $.ajax({
-      url: "html/" + content + ".html?" + Date.now(),
+      url: "html/" + content + ".php?" + Date.now(),
       dataType: "html",
       success: function (response) {
         // Restart pace loader spinner
