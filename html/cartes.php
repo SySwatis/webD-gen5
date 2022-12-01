@@ -1,5 +1,8 @@
 
-<?php include_once('inc/cartes/items.php') ?>
+<?php include_once('inc/cartes/items.php');
+// include_once('inc/cartes/enneagramme.php');
+
+?>
 
 <div class="row align-items-center" data-background='{"name":"brown","effect":"duotone"}'>
     <div class="col-lg-5 animated fadeInRight">
