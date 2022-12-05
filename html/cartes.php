@@ -75,37 +75,24 @@ include_once('inc/cartes/items.php');
     <!-- item end -->
 
 <?php endforeach ?>
-
+<?php $i=1; foreach($xmlDataCardsEnneagramme as $item)  :?>
     <!-- item start -->
     <div class="col-lg-4">
         <div class="item-4-card-family item-card-family mb-5">
             <!-- verso -->
             <div class="item-card verso text-white" style="background-color:#1b1d4e ;">
 
-                <h3 class="heading mb-3">5) l'Observateur</h3>
+                <h3 class="heading mb-3"><?php echo $item->title ?></h3>
 
                 <div class="card-slick-carousel">
 
                     <div class="item">
                         <i class="fa fa-search"></i> <small>Définition</small>
-                        <p class="p-3 text-left">Vous êtes un adepte du "Friday wear" ? S'il est important de
-                            se sentir à l'aise pour bien travailler, il faut également "garder
-                            à l'esprit que, malgré l'effet 'cool' en vigueur dans beaucoup
-                            d'entreprises, on peut avoir l'air négligé", remarque Valérie
-                            Rocoplan. (...)</p>
+                        <div class="p-3 text-left"><p><?php echo $item->textpart1 ?> (...)</p></div>
                     </div>
                     <div class="item">
                         <i class="fa fa-search"></i> <small>Définition (suite)</small>
-                     
-                        <div class="p-3 text-left">
-                            <p> "Il faut prêter attention aux codes de son
-                                organisation pour savoir où placer le curseur", conseille la
-                                fondatrice et CEO de Talentis avant d'ajouter que "cette
-                                question du look est également à prendre en compte en
-                                télétravail".Restez maître de votre image professionnelle en
-                                toutes circonstances. "Ce n'est pas parce que l'on travaille de
-                                chez soi, que l'on peut rester en pyjama !", conclut-elle.</p>
-                        </div>
+                        <div class="p-3 text-left"><p><?php echo $item->textpart2?> (...)</p></div>
                     </div>
 
                 </div>
@@ -113,15 +100,16 @@ include_once('inc/cartes/items.php');
             </div>
 
             <div class="item-card recto" style="background-color: #82ca9c;border:6px solid #1b1d4e">
-                <h2 class="heading" style="color: #1b1d4e;font-size: 36px;font-weight: 600;">5) l'Observateur</h2>
-                <div class="image-card"><img src="/img/l-observateur.png"></div>
+                <h2 class="heading" style="color: #1b1d4e;font-size: 36px;font-weight: 600;"><?php echo $item->title ?></h2>
+                <div class="image-card"><img src="/img/enneagramme/x500/recto-type-0<?php echo $i ?>.webp"></div>
                 <span class="btn btn-undo btn btn-xs btn-success mt-4 mb-2">Retourner <i class="fa fa-undo"></i></span>
-                <h2 style="color: #1b1d4e;font-size: 36px;font-weight: 600;">V l'Expert</h2>
+                <h2 style="color: #1b1d4e;font-size: 36px;font-weight: 600;"><?php echo $item->subtitle ?></h2>
             </div>
 
         </div>
     </div>
     <!-- item end -->
+    <?php $i++; endforeach; ?>
 
 
 

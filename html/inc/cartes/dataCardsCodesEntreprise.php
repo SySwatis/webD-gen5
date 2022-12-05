@@ -517,18 +517,18 @@ de coaching professionnel Talentis conseille de \"ne pas
 hésiter à utiliser des correcteurs si besoin, ou même à
 se faire aider si les difficultés sont trop importantes\"."); 
 
-$label = array('title','subTitle','textPart1','textPart2','bgColor');
+$label = array('title','subtitle','textpart1','textpart2','color');
 $i= 0;
 $y=0;
 echo '<root><row>';
 foreach($itemsCodeEntr as $item) {
     $i++;
 if($i % 4 == 0 ) {
-    echo '<'.$label[$y].'>'.$item.'</'.$label[$y].'>';
+    echo '<'.$label[$y].'>'.addslashes($item).'</'.$label[$y].'>';
     echo '</row><row>';
     $y=0;
 } else {
-    echo '<'.$label[$y].'>'.$item.'</'.$label[$y].'>';
+    echo '<'.$label[$y].'>'.addslashes($item).'</'.$label[$y].'>';
     $y++;
 }
 }
