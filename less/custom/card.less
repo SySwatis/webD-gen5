@@ -1,8 +1,19 @@
 .item-card-family {
   width: 280px;
-  height: 430px;
+  height: 420px;
   margin: 0 auto;
   position: relative;
+  .badge.badge-primary {
+    visibility: hidden;
+    opacity: 0;
+  }
+  &.has-been-read {
+    .badge.badge-primary {
+      visibility: visible;
+      opacity: 1;
+      
+    }
+  }
 
   h2 {
     font-size: 24px !important;
@@ -15,6 +26,7 @@
     width: 100%;
     padding: 1rem 1rem 3rem;
     border-radius: 12px;
+    
     img {
       max-width: 100%;
     }
@@ -29,6 +41,7 @@
       right: 0;
       left: 0;
       bottom: 0;
+      overflow: hidden;
       &:not(.hidden) {
         display: flex;
         flex-direction: column;
@@ -41,7 +54,7 @@
       font-size: 13px !important;
       bottom: 0;
       left: 50%;
-
+      z-index: 1;
       margin: 15px 0 18px -50px !important;
       display: block;
     }
@@ -52,6 +65,27 @@
     overflow-x: hidden;
     overflow-y: scroll;
     margin-bottom: 1em;
+  }
+}
+
+.cards {
+  &-enneagramme {
+    .btn.btn-undo {
+      margin-bottom: 90px;
+    }
+    .recto .image-card {
+      position: absolute;
+      right: 0;
+      top: 0;
+      left: 0;
+      img {
+        position: absolute;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        right: 0;
+      }
+    }
   }
 }
 
@@ -67,7 +101,7 @@
       position: absolute;
       z-index: 1;
       left: 0;
-      top:0;
+      top: 0;
       right: 0;
     }
   }
@@ -90,11 +124,11 @@
     }
     &.cat-1 .recto .image-card::after {
       background-color: #0070c0;
-      opacity: 0.60;
+      opacity: 0.6;
     }
     &.cat-2 .recto .image-card::after {
       background-color: #157039;
-      opacity: 0.60;
+      opacity: 0.6;
     }
     &.cat-3 .recto .image-card::after {
       background-color: #701515;
@@ -105,7 +139,14 @@
 @media screen and (min-width: 540px) {
   .item-card-family {
     width: 360px;
-    height: 520px;
+    height: 540px;
+    &.cards {
+      &-enneagramme {
+        .btn.btn-undo {
+          margin-bottom: 90px !important;
+        }
+      }
+    }
     .item-card {
       padding: 1.5rem 1.5rem 4.1rem;
       border-radius: 12px;

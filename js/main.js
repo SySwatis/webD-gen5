@@ -1,7 +1,8 @@
 (function ($) {
+
   // Config
 
-  var defaultContent = "cartes";
+  var defaultContent = "enneagramme";
   var historyBack = false;
 
   // Flip cart
@@ -14,6 +15,9 @@
       0
     );
   };
+
+  // Cards
+
   var cardFamily = function () {
     $(document).ready(function () {
       console.log("cardFamily");
@@ -21,12 +25,28 @@
 
       // Card inner
       $cardFamilyCarousel = $(".card-slick-carousel");
+   
       $cardFamilyCarousel.slick({
         dots: true,
-        arrows: false,
+        arrows: false
+      }).on('afterChange', function(event, slick, currentSlide){
+        nSlickItems = $(this).find('.slick-slide').not('.slick-cloned').length - 1;
+        if(currentSlide==nSlickItems) {
+          $(this).closest('.item-card-family').addClass('has-been-read');
+        }
+
       });
+      /*
+      
+      $(".btn-slick-goto").on("click", function () {
+        var goTo =
+          -1 + slickTestContainer.slick("slickCurrentSlide") * -1;
+        history.go(goTo);
+      });
+      */
 
       $(".item-card-family .recto").on("click", function (e) {
+        
         e.preventDefault();
         $(this).addClass("hidden");
         $(this)
@@ -54,6 +74,36 @@
       });
     });
   };
+
+
+  // Enneagramme Test
+
+  var enneaTest = function() {
+    $(document).ready(function () {
+
+      $slickEnneagramme = $(".slick-enneagramme");
+      $slickEnneagramme.slick({
+        dots: false,
+        arrows: false,
+        //draggable: false,
+        infinite: false,
+        // swipe: false,
+        focusOnChange: true,
+      });
+
+      $('.btn-set-enneagramme').find('.btn-next').on('click',function(e){
+        e.preventDefault();
+        console.log('test');
+        $slickEnneagramme.slick('slickNext');
+      });
+      $('.btn-set-enneagramme').find('.btn-prev').on('click',function(e){
+        e.preventDefault();
+        console.log('test');
+        $slickEnneagramme.slick('slickPrev');
+      });
+
+    });
+  }
 
   // Init
 
@@ -139,9 +189,12 @@
       url: "html/" + content + ".php?" + Date.now(),
       dataType: "html",
       success: function (response) {
-        // Restart pace loader spinner
 
         new cardFamily();
+        
+        new enneaTest();
+
+        // Restart pace loader spinner
 
         Pace.restart();
 

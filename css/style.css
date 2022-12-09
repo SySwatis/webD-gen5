@@ -9800,6 +9800,7 @@ svg,
 .ibox h3,
 .ibox p,
 .btn,
+.badge,
 a {
   -webkit-transition: all 0.5s;
   -moz-transition: all 0.5s;
@@ -9836,6 +9837,21 @@ a {
 .btn.navbar-minimalize,
 .prev-box .btn {
   box-shadow: 0 0 3px rgba(15, 12, 12, 0.45);
+}
+.badge {
+  position: absolute;
+  border-radius: 50%;
+  padding: 6px;
+  font-size: 18px;
+  width: 32px;
+  height: 32px;
+  z-index: 5;
+  left: 0;
+  top: 0;
+  margin: -9px 0 0 -9px;
+}
+.nav-tabs .nav-item {
+  position: relative;
 }
 .to-top {
   position: fixed;
@@ -10586,9 +10602,17 @@ h2 .fa {
 }
 .item-card-family {
   width: 280px;
-  height: 430px;
+  height: 420px;
   margin: 0 auto;
   position: relative;
+}
+.item-card-family .badge.badge-primary {
+  visibility: hidden;
+  opacity: 0;
+}
+.item-card-family.has-been-read .badge.badge-primary {
+  visibility: visible;
+  opacity: 1;
 }
 .item-card-family h2 {
   font-size: 24px !important;
@@ -10615,6 +10639,7 @@ h2 .fa {
   right: 0;
   left: 0;
   bottom: 0;
+  overflow: hidden;
 }
 .item-card-family .item-card.recto:not(.hidden) {
   display: flex;
@@ -10627,6 +10652,7 @@ h2 .fa {
   font-size: 13px !important;
   bottom: 0;
   left: 50%;
+  z-index: 1;
   margin: 15px 0 18px -50px !important;
   display: block;
 }
@@ -10635,6 +10661,22 @@ h2 .fa {
   overflow-x: hidden;
   overflow-y: scroll;
   margin-bottom: 1em;
+}
+.cards-enneagramme .btn.btn-undo {
+  margin-bottom: 90px;
+}
+.cards-enneagramme .recto .image-card {
+  position: absolute;
+  right: 0;
+  top: 0;
+  left: 0;
+}
+.cards-enneagramme .recto .image-card img {
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  right: 0;
 }
 .page-cartes .recto .image-card {
   position: relative;
@@ -10680,7 +10722,10 @@ h2 .fa {
 @media screen and (min-width: 540px) {
   .item-card-family {
     width: 360px;
-    height: 520px;
+    height: 540px;
+  }
+  .item-card-family.cards-enneagramme .btn.btn-undo {
+    margin-bottom: 90px !important;
   }
   .item-card-family .item-card {
     padding: 1.5rem 1.5rem 4.1rem;

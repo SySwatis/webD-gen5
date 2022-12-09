@@ -1,6 +1,8 @@
 
 <?php 
 include_once('inc/cartes/items.php');
+include_once('inc/cartes/dataTextEnneagramme.php');
+
 ?>
 
 <div class="row align-items-center" data-background='{"name":"brown","effect":"duotone"}'>
@@ -31,6 +33,8 @@ include_once('inc/cartes/items.php');
     </div>
 
 </div>
+
+
 
 <div id="cardFamily" class="row align-items-middle text-center mt-lg-4">
 
