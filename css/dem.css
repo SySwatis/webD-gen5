@@ -1,0 +1,12 @@
+.mon_im {
+    min-width: 100%;
+    height: auto;
+    max-width: 100%;
+}
+
+@media (min-width: 768px) {
+    .mon_im {
+
+    max-width: 50%;
+}
+}

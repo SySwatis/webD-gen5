@@ -1,5 +1,5 @@
 (function ($) {
-
+  
   // Config
 
   var defaultContent = "enneagramme";
@@ -8,11 +8,9 @@
   // Flip cart
 
   var preventScroll = function (el) {
-    $("html, body").animate(
-      {
+    $("html, body").animate({
         scrollTop: $(el).offset().top + -60,
-      },
-      0
+      },0
     );
   };
 
@@ -25,17 +23,21 @@
 
       // Card inner
       $cardFamilyCarousel = $(".card-slick-carousel");
-   
-      $cardFamilyCarousel.slick({
-        dots: true,
-        arrows: false
-      }).on('afterChange', function(event, slick, currentSlide){
-        nSlickItems = $(this).find('.slick-slide').not('.slick-cloned').length - 1;
-        if(currentSlide==nSlickItems) {
-          $(this).closest('.item-card-family').addClass('has-been-read');
-        }
 
-      });
+      $cardFamilyCarousel
+        .slick({
+          dots: true,
+          arrows: false,
+        })
+        .on("afterChange", function (event, slick, currentSlide) {
+          nSlickItems =
+            $(this).find(".slick-slide").not(".slick-cloned").length - 1;
+          if (currentSlide == nSlickItems) {
+            $(this).closest(".item-card-family").addClass("has-been-read");
+            // Unlock
+            $(".item-card-family").removeClass('lock');
+          }
+        });
       /*
       
       $(".btn-slick-goto").on("click", function () {
@@ -46,7 +48,6 @@
       */
 
       $(".item-card-family .recto").on("click", function (e) {
-        
         e.preventDefault();
         $(this).addClass("hidden");
         $(this)
@@ -75,35 +76,71 @@
     });
   };
 
-
   // Enneagramme Test
 
-  var enneaTest = function() {
+  var enneaTest = function () {
     $(document).ready(function () {
-
       $slickEnneagramme = $(".slick-enneagramme");
-      $slickEnneagramme.slick({
-        dots: false,
-        arrows: false,
-        //draggable: false,
-        infinite: false,
-        // swipe: false,
-        focusOnChange: true,
-      });
+      $slickEnneagramme
+        .slick({
+          dots: false,
+          arrows: false,
+          draggable: false,
+          infinite: false,
+          accessibility: false,
+          swipe: false,
+        })
+        .on("afterChange", function (event, slick, currentSlide, nextSlide) {
+          console.log(currentSlide);
+          if(currentSlide==0){
+            $(".btn-set-enneagramme").find(".btn-valid").addClass("hidden");
+            $(".btn-set-enneagramme").find(".btn-prev").addClass("hidden");
+          } else {
+            $(".btn-set-enneagramme").find(".btn-valid").removeClass("hidden");
+            $(".btn-set-enneagramme").find(".btn-prev").removeClass("hidden");
+          }
+          $(".btn-pagination-enneagramme").find(".btn").removeClass("btn-primary");
+          $('.btn-pagination-enneagramme').find("li:eq("+currentSlide+")").find('.btn').addClass("btn-primary");
+        });
 
-      $('.btn-set-enneagramme').find('.btn-next').on('click',function(e){
+      $(".btn-set-enneagramme")
+        .find(".btn-next")
+        .on("click", function (e) {
+          e.preventDefault();
+          $slickEnneagramme.slick("slickNext");
+        });
+
+      $(".btn-set-enneagramme")
+        .find(".btn-prev")
+        .on("click", function (e) {
+          e.preventDefault();
+          $slickEnneagramme.slick("slickPrev");
+        });
+
+      $(".btn-pagination-enneagramme")
+        .find(".btn-slick-goto")
+        .on("click", function (e) {
+          e.preventDefault();
+          slickIndex = $(this).data("slick-index");
+          $slickEnneagramme.slick("slickGoTo",slickIndex);
+        });
+      $("#choiceEnneaModal").find('.btn-restart').on('click',function(e){
         e.preventDefault();
-        console.log('test');
-        $slickEnneagramme.slick('slickNext');
+        $("#choiceEnneaModal").modal('hide');
+        $slickEnneagramme.slick("slickGoTo", 0);
       });
-      $('.btn-set-enneagramme').find('.btn-prev').on('click',function(e){
+      
+      $("#choiceEnneaModal").find('.btn-valid').on('click',function(e){
         e.preventDefault();
-        console.log('test');
-        $slickEnneagramme.slick('slickPrev');
+        $("#choiceEnneaModal").modal('hide');
+        $('.enneagramme-step-1').addClass('hidden');
+        $('.item-card-family-1').parent('div').removeClass('hidden');
+        $('.item-card-family-2').addClass('lock').parent('div').removeClass('hidden')
+        $('.item-card-family-5').addClass('lock').parent('div').removeClass('hidden');
       });
 
     });
-  }
+  };
 
   // Init
 
@@ -189,9 +226,8 @@
       url: "html/" + content + ".php?" + Date.now(),
       dataType: "html",
       success: function (response) {
-
         new cardFamily();
-        
+
         new enneaTest();
 
         // Restart pace loader spinner
@@ -235,7 +271,7 @@
 
         $("body").addClass("page-" + content);
 
-        if (historyBack==true) {
+        if (historyBack == true) {
           // sessionStorage.setItem("content", content);
 
           // var pathname = window.location.pathname; // Returns path only (/path/example.html)
@@ -246,7 +282,7 @@
           const nextTitle = content;
           const nextState = {
             additionalInformation: "Updated the URL with JS",
-          }
+          };
 
           // This will create a new entry in the browser's history, without reloading
           window.history.pushState(nextState, nextTitle, nextURL);
@@ -546,7 +582,7 @@
         // Not parent submenu
         if (!$(this).find(".fa.arrow").length) {
           e.preventDefault();
-          if ($(this).closest("li").length) {
+          if ($(this).closest("li").length && $(this).closest("nav").length ) {
             $("nav li").not($(this).closest("li")).removeClass("active");
             $(this).closest("li").addClass("active");
             if ($("body.mini-navbar").length) {

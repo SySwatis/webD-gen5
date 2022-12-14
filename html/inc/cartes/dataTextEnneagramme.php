@@ -85,9 +85,32 @@ conflits et la confrontation.")
 
 );
 
-$dataTextEnneagramme = array(array("A",
+$dataTextEnneagramme = array(
+array("Règle","Choisir parmi les 9 textes qui vont
+suivre : A,B,C,D,E,F,G,H.ou I<br><br>
+
+Attention : même si chacun de ces 9 textes peut paraître vous 
+décrire partiellement, il ne s’agit pas de panacher mais de choisir
+celui qui, dans son ensemble,semble le plus vous correspondre.
+Considérez chaque texte comme un tout. N’isolez pas les 
+phrases en les sortant de leur contexte.<br><br>
+
+Important : posez-vous les questions suivantes : 
+Est-ce que ce texte dans sa totalité me ressemble ? 
+Est-ce que je le retiens comme me décrivant ?<br><br>
+
+S’il vous est difficile de choisir quel texte vous correspond le 
+plus, demandez-vous : « Quel paragraphe choisirait un proche 
+(parent, conjoint, ami) pour me décrire ? »<br><br>
+
+Notez par ailleurs qu’un autre moyen d’y parvenir est de vous 
+demander lequel de ces textes vous aurait le mieux défini vers 
+25 ans, les traits de la personnalité étant généralement 
+fortement marqués au début de l’âge adulte.<br><br>"), 
+array("A",
 "J'approche les situations, surtout celles qui me tiennent à cœur, de façon entière : « tout ou
 rien ». J'attache de la valeur à être quelqu'un de fort, de juste et sur qui on peut compter.
+<br><br>
 Quand on me rencontre, pas d'embrouille, je suis ce dont j'ai l'air. Je ne fais pas confiance
 aux autres avant qu'ils n'aient montré qu'ils étaient fiables. J'aime que les gens soient directs
 avec moi, et je sais quand quelqu'un cache son jeu, ment ou essaye de m'avoir. J'ai du mal à
@@ -104,7 +127,9 @@ array("B",
 ce qui ne va pas et comment les choses pourraient être améliorées. Les autres me
 considèrent probablement comme trop critique ou en quête de perfection, mais il m'est
 difficile de rester indifférent ou d'accepter que les choses ne soient pas comme elles
-devraient être. Quand je suis responsable de quelque chose, on peut être sûr que je le ferai
+devraient être. 
+<br><br>
+Quand je suis responsable de quelque chose, on peut être sûr que je le ferai
 convenablement et j'en suis fier. J'éprouve parfois du ressentiment quand les gens n'essaient
 pas de faire leur travail correctement ou se comportent de manière irresponsable, même si
 je m'efforce de ne pas le leur montrer ouvertement. Pour moi, le travail passe généralement
@@ -114,7 +139,9 @@ array("C",
 "J'ai l'impression d'être capable de distinguer l'ensemble des points de vue assez facilement.
 Je peux même parfois donner l'impression d'être indécis, parce que je peux discerner les
 avantages et les inconvénients de tous les points de vue. Ma facilité à appréhender toutes les
-opinions me rend bon à aider les autres à résoudre leurs différends. Cette capacité peut
+opinions me rend bon à aider les autres à résoudre leurs différends. 
+<br><br>
+Cette capacité peut
 m'amener à être davantage conscient des positions des autres et de leurs priorités que des
 miennes. Il m'arrive d'être distrait et de dévier de la tâche que j'accomplissais. Quand ça
 arrive, mon attention s'échappe généralement vers des tâches sans importance. J'ai souvent

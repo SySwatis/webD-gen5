@@ -269,7 +269,7 @@
 
             <div class="ibox">
                 <div class="ibox-title ibox-title-orange">
-                    <h2>Fenêtre <span>Privée</span></h3>
+                    <h2>Fenêtre <span>Privée</span></h2>
                         <div class="ibox-tools clearfix">
                             <div class="profile-image pb-2">
                                 <img alt="image" class="rounded-circle  m-b-md" src="img/profile_small-123x.jpg">
@@ -315,7 +315,7 @@
                     </div>
 
                 </div>
-                <div class="ibox-content">
+                <!-- <div class="ibox-content">
                     
                     <div class="pt-5 pb-2 text-lg-right">
                     <div class="form-container p-3">
@@ -338,7 +338,7 @@
 
                         </form>
                     </div>
-                </div>
+                </div> -->
             </div>
 
         </div>
