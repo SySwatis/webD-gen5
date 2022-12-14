@@ -62,20 +62,13 @@ include_once 'inc/cartes/dataTextEnneagramme.php';
                     </div>
                 </div>
                 <div class="btn-set-enneagramme col-12 col-lg-12 m-t-lg">
-                                <?php // if ($i > 0): ?>
-                                <button type="button" class="btn btn-success btn-valid btn-lg mb-3 mt-3 mr-3 hidden"
-                                        data-toggle="modal" data-target="#choiceEnneaModal">Choisir</button>
-                                <button type="button" class="btn btn-outline-secondary btn-lg mb-3 mt-3 btn-prev hidden" onclick="">Précédent</button>
-                                <?php // endif; ?>
-                                <button type="button" class="btn btn-outline-secondary btn-lg mb-3 mt-3 btn-next" onclick="">Suivant</button>
-                            </div>
+                    <button type="button" class="btn btn-success btn-valid btn-lg mb-3 mt-3 mr-3 hidden" data-toggle="modal" data-target="#choiceEnneaModal">Choisir</button>
+                    <button type="button" class="btn btn-outline-secondary btn-lg mb-3 mt-3 btn-prev hidden" onclick="">Précédent</button>
+                    <button type="button" class="btn btn-outline-secondary btn-lg mb-3 mt-3 btn-next" onclick="">Suivant</button>
+                </div>
             </div>
             
-        </div>
-
-
-
-                       
+        </div>    
 
     </div>
 </div>
@@ -86,7 +79,7 @@ $i = 1;
 foreach ($xmlDataCardsEnneagramme as $item): ?>
     <!-- item start -->
     <div class="col-lg-4 hidden">
-        <div class="item-card-family-<?php echo $i; ?> item-card-family mb-5 cards-enneagramme">
+        <div class="item-card-family-<?php echo $i; ?> item-card-family mb-5 cards-enneagramme" data-display="[<?php echo $item->cat ?>]">
         <span class="badge badge-primary"><span class="fa fa-check"></span></span>
             <!-- verso -->
             <div class="item-card verso text-white" style="background-color:#1b1d4e ;">
@@ -133,8 +126,14 @@ foreach ($xmlDataCardsEnneagramme as $item): ?>
                 </div>
                 <div class="ibox-content justify-content-center">
                     <small class="text-center d-inline-block">Votre chiffre correspondant est le</small>
-                    <h2 class="main-title text-center"><?php echo $dataDescEnneagramme[0][0]; ?></h2>
-                    <p><?php echo $dataDescEnneagramme[0][1]; ?></p>
+                    <?php 
+                    // Start to 1 (slick 1)
+                    $i=1; foreach($dataDescEnneagramme as $itemEnnagramme ) : ?>
+                        <div id="item-enneagramme-type-<?php echo $i ?>" class="item-enneagramme-type-<?php echo $i ?> item-enneagramme-type hidden">
+                            <h2 class="main-title text-center"><?php echo $itemEnnagramme[0]; ?></h2>
+                            <p><?php echo $itemEnnagramme[1]; ?></p>
+                        </div>
+                    <?php $i++; endforeach ?>
                     <div class="text-center mr-5 ml-5">
                         <h2>Je valide ce choix</h2>
                         <button type="button" class="btn btn-success btn-block mb-3 mt-3 btn-valid">Oui</button>

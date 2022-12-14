@@ -117,6 +117,19 @@
           $slickEnneagramme.slick("slickPrev");
         });
 
+      // Step 1
+      // Valid
+      $(".btn-set-enneagramme")
+      .find(".btn-valid")
+      .on("click", function (e) {
+        e.preventDefault();
+        dataIndex = $slickEnneagramme.find('.slick-active').data('slick-index');
+        $('.item-enneagramme-type').addClass('hidden');
+        $('.item-enneagramme-type-'+dataIndex).removeClass('hidden');
+        console.log(dataIndex);
+      });
+
+        
       $(".btn-pagination-enneagramme")
         .find(".btn-slick-goto")
         .on("click", function (e) {
@@ -132,11 +145,17 @@
       
       $("#choiceEnneaModal").find('.btn-valid').on('click',function(e){
         e.preventDefault();
+        
         $("#choiceEnneaModal").modal('hide');
         $('.enneagramme-step-1').addClass('hidden');
-        $('.item-card-family-1').parent('div').removeClass('hidden');
-        $('.item-card-family-2').addClass('lock').parent('div').removeClass('hidden')
-        $('.item-card-family-5').addClass('lock').parent('div').removeClass('hidden');
+
+        dataIndex = $slickEnneagramme.find('.slick-active').data('slick-index');
+        let arrDisplay = $('.item-card-family-'+dataIndex).data('display');
+        $('.item-card-family-'+dataIndex).parent('div').removeClass('hidden');
+        $.each(arrDisplay,function(index,item) {
+          $('.item-card-family-'+item).addClass('lock').parent('div').removeClass('hidden')
+        });
+        
       });
 
     });
