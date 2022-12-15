@@ -79,6 +79,20 @@
   // Enneagramme Test
 
   var enneaTest = function () {
+
+    var displayResult = function() {
+      $('.enneagramme-step-1').addClass('hidden');
+        dataIndex = $slickEnneagramme.find('.slick-active').data('slick-index');
+        var arrDisplay = $('.item-card-family-'+dataIndex).data('display');
+        $('.item-card-family-'+dataIndex).parent('div').removeClass('hidden');
+        $('.item-card-family-ibox').parent('div').removeClass('hidden');
+        $('.item-enneagramme-type').addClass('hidden');
+        $.each(arrDisplay,function(index,item) {
+          $('.item-enneagramme-type-'+dataIndex).removeClass('hidden');
+          $('.item-card-family-'+item).addClass('lock').parent('div').removeClass('hidden');
+        });
+    }
+
     $(document).ready(function () {
       $slickEnneagramme = $(".slick-enneagramme");
       $slickEnneagramme
@@ -93,11 +107,15 @@
         .on("afterChange", function (event, slick, currentSlide, nextSlide) {
           console.log(currentSlide);
           if(currentSlide==0){
+            $(".btn-set-enneagramme").find(".btn-start").removeClass("hidden");
             $(".btn-set-enneagramme").find(".btn-valid").addClass("hidden");
             $(".btn-set-enneagramme").find(".btn-prev").addClass("hidden");
+            $(".btn-set-enneagramme").find(".btn-next").not('.btn-start').addClass("hidden");
           } else {
+            $(".btn-set-enneagramme").find(".btn-start").addClass("hidden");
             $(".btn-set-enneagramme").find(".btn-valid").removeClass("hidden");
             $(".btn-set-enneagramme").find(".btn-prev").removeClass("hidden");
+            $(".btn-set-enneagramme").find(".btn-next").not('.btn-start').removeClass("hidden");
           }
           $(".btn-pagination-enneagramme").find(".btn").removeClass("btn-primary");
           $('.btn-pagination-enneagramme').find("li:eq("+currentSlide+")").find('.btn').addClass("btn-primary");
@@ -118,18 +136,22 @@
         });
 
       // Step 1
-      // Valid
-      $(".btn-set-enneagramme")
-      .find(".btn-valid")
-      .on("click", function (e) {
+
+      // Valid with modal
+      // $(".btn-set-enneagramme")
+      // .find(".btn-valid.modal")
+      // .on("click", function (e) {
+      //   e.preventDefault();
+      //   dataIndex = $slickEnneagramme.find('.slick-active').data('slick-index');
+      //   $('.item-enneagramme-type').addClass('hidden');
+      //   $('.item-enneagramme-type-'+dataIndex).removeClass('hidden');
+      // });
+       // Valid without modal
+      $(".btn-set-enneagramme").find('.btn-valid').not('.btn-modal').on('click',function(e){
         e.preventDefault();
-        dataIndex = $slickEnneagramme.find('.slick-active').data('slick-index');
-        $('.item-enneagramme-type').addClass('hidden');
-        $('.item-enneagramme-type-'+dataIndex).removeClass('hidden');
-        console.log(dataIndex);
+        displayResult();
       });
 
-        
       $(".btn-pagination-enneagramme")
         .find(".btn-slick-goto")
         .on("click", function (e) {
@@ -137,6 +159,7 @@
           slickIndex = $(this).data("slick-index");
           $slickEnneagramme.slick("slickGoTo",slickIndex);
         });
+        
       $("#choiceEnneaModal").find('.btn-restart').on('click',function(e){
         e.preventDefault();
         $("#choiceEnneaModal").modal('hide');
@@ -145,17 +168,8 @@
       
       $("#choiceEnneaModal").find('.btn-valid').on('click',function(e){
         e.preventDefault();
-        
         $("#choiceEnneaModal").modal('hide');
-        $('.enneagramme-step-1').addClass('hidden');
-
-        dataIndex = $slickEnneagramme.find('.slick-active').data('slick-index');
-        let arrDisplay = $('.item-card-family-'+dataIndex).data('display');
-        $('.item-card-family-'+dataIndex).parent('div').removeClass('hidden');
-        $.each(arrDisplay,function(index,item) {
-          $('.item-card-family-'+item).addClass('lock').parent('div').removeClass('hidden')
-        });
-        
+        displayResult();
       });
 
     });

@@ -21,7 +21,7 @@ include_once 'inc/cartes/dataTextEnneagramme.php';
         <div class="ibox text-center">
             <div class="ibox-content">
                 <div class="heading">Enneagramme</div>
-                <button data-modal="choiceModal" class="btn btn-success mb-3 mt-3">Plus d'explications</button>
+                <button data-modal="choiceModal" class="btn btn-success pb-3 mt-3">Plus d'explications</button>
             </div>
         </div>
     </div> -->
@@ -61,10 +61,12 @@ include_once 'inc/cartes/dataTextEnneagramme.php';
                         <?php $i++;endforeach;?>
                     </div>
                 </div>
-                <div class="btn-set-enneagramme col-12 col-lg-12 m-t-lg">
-                    <button type="button" class="btn btn-success btn-valid btn-lg mb-3 mt-3 mr-3 hidden" data-toggle="modal" data-target="#choiceEnneaModal">Choisir</button>
-                    <button type="button" class="btn btn-outline-secondary btn-lg mb-3 mt-3 btn-prev hidden" onclick="">Précédent</button>
-                    <button type="button" class="btn btn-outline-secondary btn-lg mb-3 mt-3 btn-next" onclick="">Suivant</button>
+                <div class="btn-set-enneagramme col-12 col-lg-12 m-t-lg m-b-lg">
+                    <button type="button" class="btn btn-success btn-lg mt-3 btn-start btn-next">Commencer <span class="fa fa-arrow-right"></span></button>
+                    <!-- <button type="button" class="btn btn-success btn-lg pb-3 mt-3 mr-3 btn-valid hidden btn-modal" data-toggle="modal" data-target="#choiceEnneaModal">Choisir</button> -->
+                    <button type="button" class="btn btn-success btn-lg mt-3 mr-3 btn-valid hidden">Choisir</button>
+                    <button type="button" class="btn btn-outline-secondary btn-lg mt-3 btn-prev hidden">Précédent</button>
+                    <button type="button" class="btn btn-outline-secondary btn-lg mt-3 btn-next hidden">Suivant</button>
                 </div>
             </div>
             
@@ -74,17 +76,54 @@ include_once 'inc/cartes/dataTextEnneagramme.php';
 </div>
 
 <div id="cardFamily" class="row align-items-middle text-center mt-lg-4 enneagramme-step-2">
+    <!-- Item description -->
+    <div class="col col-lg-6 hidden">
+        <div class="ibox ibox-background-orange text-white ibox item-card-family-ibox">
+            <div class="ibox-content text-left">
+                <i class="fa fa-2x fa-check float-right"></i>
+                <?php 
+                // Start to 1 (slick 1)
+                $i=1; foreach($dataDescEnneagramme as $itemEnnagramme ) : ?>
+                    <div id="item-enneagramme-type-<?php echo $i ?>" class="item-enneagramme-type-<?php echo $i ?> item-enneagramme-type hidden">
+                        <h2 class="main-title text-center"><?php echo $itemEnnagramme[0]; ?></h2>
+                        <p><?php echo $itemEnnagramme[1]; ?></p>
+                    </div>
+                <?php $i++; endforeach ?>
+            </div>
+            </div>
+    </div>
 <?php
 $i = 1;
 foreach ($xmlDataCardsEnneagramme as $item): ?>
+<?php if($i==2) : ?>
+    <div class="col col-lg-6 hidden">
+        <div class="ibox ibox-background-orange text-white item-card-family-ibox">
+            <div class="ibox-content text-center">
+                <i class="fa fa-2x fa-paper-plane float-right"></i>
+                <h2>Mes <span>Ailes</span></h2>
+            </div>
+        </div>
+    </div>
+<?php endif ?>
+<?php if($i==5) : ?>
+    <div class="col-6 col-lg-6 "></div>
+    <div class="col-6 col-lg-6 hidden">
+        <div class="ibox ibox-background-orange text-white item-card-family-ibox">
+            <div class="ibox-content text-center">
+                <i class="fa fa-2x fa-road float-right"></i>
+                <h2>Mon <span>Evolution<span></h2>
+            </div>
+        </div>
+    </div>
+<?php endif ?>
     <!-- item start -->
-    <div class="col-lg-4 hidden">
+    <div class="col-12 col-lg-6 hidden">
         <div class="item-card-family-<?php echo $i; ?> item-card-family mb-5 cards-enneagramme" data-display="[<?php echo $item->cat ?>]">
         <span class="badge badge-primary"><span class="fa fa-check"></span></span>
             <!-- verso -->
             <div class="item-card verso text-white" style="background-color:#1b1d4e ;">
 
-                <h3 class="heading mb-3"><?php echo $item->title; ?></h3>
+                <h3 class="heading pb-3"><?php echo $item->title; ?></h3>
 
                 <div class="card-slick-carousel">
 
@@ -136,8 +175,8 @@ foreach ($xmlDataCardsEnneagramme as $item): ?>
                     <?php $i++; endforeach ?>
                     <div class="text-center mr-5 ml-5">
                         <h2>Je valide ce choix</h2>
-                        <button type="button" class="btn btn-success btn-block mb-3 mt-3 btn-valid">Oui</button>
-                        <button type="button" class="btn btn-outline-secondary btn-block mb-3 mt-3 btn-restart">Recommencer</button>
+                        <button type="button" class="btn btn-success btn-block mt-3 btn-valid">Oui</button>
+                        <button type="button" class="btn btn-outline-secondary btn-block mt-3 btn-restart">Recommencer</button>
                     </div> 
                 </div>
             </div>
