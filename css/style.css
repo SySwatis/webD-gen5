@@ -10674,7 +10674,7 @@ h2 .fa {
   bottom: 0;
   left: 50%;
   z-index: 1;
-  margin: 15px 0 18px -50px !important;
+  margin: 15px 0 18px -50px;
   display: block;
 }
 .item-card-family .item.slick-slide {
@@ -10683,16 +10683,16 @@ h2 .fa {
   overflow-y: scroll;
   margin-bottom: 1em;
 }
-.cards-enneagramme .btn.btn-undo {
+.item-card-family.cards-enneagramme .item-card.recto .btn.btn-undo {
   margin-bottom: 90px;
 }
-.cards-enneagramme .recto .image-card {
+.item-card-family.cards-enneagramme .item-card.recto .image-card {
   position: absolute;
   right: 0;
   top: 0;
   left: 0;
 }
-.cards-enneagramme .recto .image-card img {
+.item-card-family.cards-enneagramme .item-card.recto .image-card img {
   position: absolute;
   z-index: 1;
   left: 0;

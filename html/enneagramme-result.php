@@ -50,7 +50,7 @@
             <div class="ibox-content text-center">
                 <i class="fa fa-2x fa-star float-right"></i>
                 <h2>Mon <span>Énéatype</span></h2>
-                <p class="small">Chiffre</p> 
+                <p class="small">est le chiffre</p> 
                 <div class="item-enneagramme-type">
                     <h2 class="main-title"><?php echo $dataDescEnneagramme[$param1-1][0]; ?></h2>
                     <p class="text-left"><?php echo $dataDescEnneagramme[$param1-1][1]; ?></p>
@@ -79,12 +79,12 @@
                         <div class="p-3 text-left"><p><?php echo $item->textpart2; ?></p></div>
                     </div>
                 </div>
-                <span class="btn btn-undo btn btn-xs btn-primary mt-4 mb-2"><i class="fa fa-undo"></i> Retourner</span>
+                <span class="btn btn-undo btn btn-xs btn-primary mt-4"><i class="fa fa-undo"></i> Retourner</span>
             </div>
             <div class="item-card recto">
                 <!-- <h2 class="heading" style="color: #1b1d4e;font-size: 36px;font-weight: 600;"><?php echo $item->title; ?></h2> -->
                 <div class="image-card"><img src="/img/enneagramme/x500/recto-type-0<?php echo $param1; ?>.webp"></div>
-                <span class="btn btn-undo btn btn-xs btn-success mt-4 mb-2">Retourner <i class="fa fa-undo"></i></span>
+                <span class="btn btn-undo btn btn-xs btn-success mt-4">Retourner <i class="fa fa-undo"></i></span>
                 <!-- <h2 style="color: #1b1d4e;font-size: 36px;font-weight: 600;"><?php echo $item->subtitle; ?></h2> -->
             </div>
 
