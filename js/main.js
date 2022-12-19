@@ -18,7 +18,7 @@
 
   var cardFamily = function () {
     $(document).ready(function () {
-      console.log("cardFamily");
+
       $cardFamily = $("#cardFamily");
 
       // Card inner
@@ -105,7 +105,6 @@
           swipe: false,
         })
         .on("afterChange", function (event, slick, currentSlide, nextSlide) {
-          console.log(currentSlide);
           if(currentSlide==0){
             $(".btn-set-enneagramme").find(".btn-start").removeClass("hidden");
             $(".btn-set-enneagramme").find(".btn-valid").addClass("hidden");
@@ -138,14 +137,14 @@
       // Step 1
 
       // Valid with modal
-      // $(".btn-set-enneagramme")
-      // .find(".btn-valid.modal")
-      // .on("click", function (e) {
-      //   e.preventDefault();
-      //   dataIndex = $slickEnneagramme.find('.slick-active').data('slick-index');
-      //   $('.item-enneagramme-type').addClass('hidden');
-      //   $('.item-enneagramme-type-'+dataIndex).removeClass('hidden');
-      // });
+      $(".btn-set-enneagramme")
+      .find(".btn-valid.modal")
+      .on("click", function (e) {
+        e.preventDefault();
+        dataIndex = $slickEnneagramme.find('.slick-active').data('slick-index');
+        $('.item-enneagramme-type').addClass('hidden');
+        $('.item-enneagramme-type-'+dataIndex).removeClass('hidden');
+      });
        // Valid without modal
       $(".btn-set-enneagramme").find('.btn-valid').not('.btn-modal').on('click',function(e){
         e.preventDefault();
@@ -253,12 +252,20 @@
   // Ajax request (demo)
 
   var ajaxRequestHtml = function (content) {
-    page = content;
-    // alert(window.location.pathname);
+
+    var params = "null";
+    var request = content;
+    if(Array.isArray(content)) {
+      content = request.shift();
+      params = request;
+    }
+
     $.ajax({
       url: "html/" + content + ".php?" + Date.now(),
+      data:{params},
       dataType: "html",
       success: function (response) {
+
         new cardFamily();
 
         new enneaTest();

@@ -344,7 +344,6 @@
         </div>
     </div>
     
-
     <!-- Mainly scripts -->
     <script src="js/jquery-3.1.1.min.js"></script>
     <script src="js/popper.min.js"></script>
@@ -356,22 +355,16 @@
     <script src="js/inspinia.js"></script>
     <script src="js/plugins/pace/pace.min.js"></script>
 
-
     <!-- slick carousel-->
     <script src="js/plugins/slick/slick.min.js"></script>
-
 
     <!-- ChartJS-->
     <script src="js/plugins/chartJs/Chart.min.js"></script>
     
-
     <!-- Custom Ingeneria 5.0 - Syswatis -->
     <script src="js/plugins/jquery-mobile/jquery.mobile.custom.min.js"></script>
-    <script src="js/main.js?r2.2"></script>
+    <script src="js/main.js?r2.3"></script>
     <script src="js/plugins/circle-progress/jquery.circle-progress.min.js"></script>
-
-
-
 
 </body>
 
