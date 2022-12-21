@@ -63,9 +63,9 @@
           arrows: false,
         });
       });
-      $(".item-card-family .verso .btn").on("click", function (e) {
+      
+      $(".item-card-family .verso .btn-undo").on("click", function (e) {
         e.preventDefault();
-
         $(this).closest(".item-card-family").find(".verso").addClass("hidden");
         $(this)
           .closest(".item-card-family")
@@ -73,7 +73,18 @@
           .removeClass("hidden")
           .addClass("flipInYx animated");
       });
+
+      $(".item-card-family .verso .btn-next").on("click", function(e){
+        e.preventDefault();
+        console.log('slick btn');
+        $currentCarousel = $(this).closest(".card-slick-carousel");
+        $currentCarousel.slick("slickNext");
+      });
+
+
     });
+
+
   };
 
   // Enneagramme Test

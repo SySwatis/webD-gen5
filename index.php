@@ -363,7 +363,7 @@
     
     <!-- Custom Ingeneria 5.0 - Syswatis -->
     <script src="js/plugins/jquery-mobile/jquery.mobile.custom.min.js"></script>
-    <script src="js/main.js?r2.3"></script>
+    <script src="js/main.js?r2.4"></script>
     <script src="js/plugins/circle-progress/jquery.circle-progress.min.js"></script>
 
 </body>

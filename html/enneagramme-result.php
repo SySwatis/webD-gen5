@@ -72,7 +72,7 @@
                 <div class="card-slick-carousel">
                     <div class="item">
                         <i class="fa fa-search"></i> <small>Définition</small>
-                        <div class="p-3 text-left"><p><?php echo $item->textpart1; ?> (...)</p></div>
+                        <div class="p-3 text-left"><p><?php echo $item->textpart1; ?><button type="button" class="btn-next btn btn-outline btn-xs btn-block f-right"><span class="fa fa-arrow-right"></span>(Suite...)</button></p></div>
                     </div>
                     <div class="item">
                         <i class="fa fa-search"></i> <small>Définition (suite)</small>
